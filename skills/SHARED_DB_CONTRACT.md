@@ -3,7 +3,7 @@ name: shared-db-contract
 description: "Handshake contract shared by skills/claude (Vben admin), skills/claude-website (PHP API), and skills/claude-app (mobile app). Defines the one database all three connect to: schema, storage bucket, project_id, env-file matrix, and who owns the schema."
 triggers: ["db contract", "shared db contract", "handshake", "schema ownership", "which skill owns the schema"]
 version: 1.0
-date_updated: "2026-05-21"
+date_updated: "2026-05-22"
 status: authoritative
 ---
 
