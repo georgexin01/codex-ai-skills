@@ -1,0 +1,17 @@
+theme=Cyber Luxury / Deep Onyx
+palette.bg=#080808
+palette.surface=#121212
+palette.border=rgba(255, 255, 255, 0.1)
+palette.accent.primary=hsl(280, 80%, 60%)
+palette.accent.secondary=hsl(220, 90%, 55%)
+palette.accent.emergency=#FF3B30
+palette.text.high=#FFFFFF
+palette.text.medium=rgba(255, 255, 255, 0.7)
+palette.text.low=rgba(255, 255, 255, 0.4)
+typography.primary=Inter, system-ui, sans-serif
+typography.mono=JetBrains Mono, monospace
+visual_fx.radius=8px
+visual_fx.blur=12px
+visual_fx.glow=0 0 15px rgba(157, 78, 221, 0.4)
+visual_fx.transition=250ms cubic-bezier(0.4, 0, 0.2, 1)
+hud_masks.apex=[🔪 APEX] | [⚡ MODE: %s] | [✅ STATUS: %s]

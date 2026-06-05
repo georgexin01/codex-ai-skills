@@ -1,0 +1,55 @@
+# Claude context-ignore: reduce noisy local/runtime files in AI context scans.
+# Goal: token reduction + safety + context preservation.
+
+# Secrets and auth
+auth.json
+cap_sid
+installation_id
+*.key
+*.pem
+*.p12
+*.pfx
+*.token
+*.secret
+*.secrets
+
+# Runtime state and local DB/logs
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.log
+*.tmp
+*.pid
+session_index.jsonl
+.codex-global-state.json
+.codex-global-state.json.bak
+models_cache.json
+
+# High-noise local folders
+.sandbox/
+.sandbox-bin/
+.sandbox-secrets/
+.tmp/
+tmp/
+cache/
+browser/
+sqlite/
+sessions/
+ambient-suggestions/
+vendor_imports/
+**/.git/
+**/.git/**
+
+# Keep curated knowledge/skills/routing available
+!AGENTS.md
+!00_CODEX_START_HERE.md
+!00_CODEX_CUSTOM_INSTRUCTIONS_GEMINI_BRIDGE.md
+!CODEX_FULL_ACCESS_ROUTING.md
+!CODEX_DYNAMIC_ROUTING.md
+!codex-router/
+!memories/
+!skills/
+!libraries/gemini-migrated/
+!rules/
+!README.md

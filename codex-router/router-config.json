@@ -1,0 +1,49 @@
+﻿{
+  "version": "1.0",
+  "boot_profile": "ultra-lean",
+  "codex_root_mode": "dynamic",
+  "knowledge_root": "memories",
+  "tier_map": {
+    "tier_0": [
+      "memories/0_apex/GROUND_KERNEL.md",
+      "memories/0_apex/KARPATHY_TIER0_PRINCIPLES.md"
+    ],
+    "tier_1": [
+      "memories/2_governance/PREFLIGHT_CHECKLIST.md"
+    ],
+    "tier_2": [
+      "memories/2_governance/artifacts/skill_path_router.md"
+    ],
+    "tier_3": [
+      "skills"
+    ]
+  },
+  "fallback_chain": [],
+  "exclude": [
+    "skills/faucet",
+    "**/.git",
+    "**/.git/**",
+    "**\\.git",
+    "**\\.git\\**",
+    ".git",
+    ".git/**",
+    ".git\\**",
+    "memories/.git",
+    "memories/.git/**",
+    "memories\\.git",
+    "memories\\.git\\**",
+    "memories/archive",
+    "memories/archive/**",
+    "memories\\archive",
+    "memories\\archive\\**",
+    "memories/rollout_summaries",
+    "memories/rollout_summaries/**",
+    "memories\\rollout_summaries",
+    "memories\\rollout_summaries\\**",
+    "memories/raw_memories.md"
+  ],
+  "roots": [
+    { "kind": "knowledge", "path": "memories" },
+    { "kind": "skill-reference", "path": "skills" }
+  ]
+}

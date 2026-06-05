@@ -1,0 +1,99 @@
+{
+  "version": "1.0",
+  "updated": "2026-05-29",
+  "targets": {
+    "max_safe_indexed_files": 380,
+    "max_knowledge_routes": 80,
+    "max_missing_entries": 0,
+    "max_legacy_refs": 60
+  },
+  "cases": [
+    {
+      "id": "boot-pulse-only",
+      "type": "boot",
+      "prompt": "new task startup",
+      "expect_contains": [
+        "Primary boot = 00_PULSE.md only",
+        "00_PULSE.md"
+      ],
+      "expect_not_contains": [
+        "00_CODEX_CUSTOM_INSTRUCTIONS_CODEX_BRIDGE.md",
+        "CODEX_FULL_ACCESS_ROUTING.md"
+      ]
+    },
+    {
+      "id": "sentinel-knowledge",
+      "type": "route",
+      "prompt": "ai read .codex knowledge",
+      "file": "00_PULSE.md",
+      "expect_contains": [
+        "Agent is Ready",
+        "route-first selective loading once per chat"
+      ]
+    },
+    {
+      "id": "design-app-route",
+      "type": "route",
+      "prompt": "ai design app",
+      "file": "00_PULSE.md",
+      "expect_contains": [
+        "skills/design/app/SKILL.md"
+      ]
+    },
+    {
+      "id": "gitnexus-policy-route",
+      "type": "route",
+      "prompt": "ai gitnexus",
+      "file": "00_PULSE.md",
+      "expect_contains": [
+        "memories/2_governance/GITNEXUS.md"
+      ]
+    },
+    {
+      "id": "relation-autoguard-route",
+      "type": "route",
+      "prompt": "typed delete relation",
+      "file": "memories/2_governance/artifacts/skill_path_router.md",
+      "expect_contains": [
+        "memories/project_notes/VBEN_RELATION_AUTOGUARD_PLAYBOOK.md"
+      ]
+    },
+    {
+      "id": "twenty-eighty-context-rule",
+      "type": "principle",
+      "prompt": "large context request",
+      "file": "00_PULSE.md",
+      "expect_contains": [
+        "20/80 context compression",
+        "mission-critical context verbatim"
+      ]
+    },
+    {
+      "id": "archive-noise-excluded",
+      "type": "noise",
+      "prompt": "normal routing should not index archive history",
+      "file": "codex-router/router-config.json",
+      "expect_contains": [
+        "memories/archive",
+        "memories/rollout_summaries",
+        "memories/raw_memories.md"
+      ],
+      "manifest_forbidden_paths": [
+        "archive\\\\",
+        "rollout_summaries\\\\",
+        "raw_memories.md"
+      ]
+    },
+    {
+      "id": "route-integrity-rule",
+      "type": "safety",
+      "prompt": "merge or delete knowledge file",
+      "file": "00_PULSE.md",
+      "expect_contains": [
+        "Route integrity is mandatory",
+        "Regenerate routing"
+      ]
+    }
+  ]
+}
+

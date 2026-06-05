@@ -1,0 +1,128 @@
+model = "gpt-5.4"
+model_reasoning_effort = "low"
+approval_policy = "on-request"
+personality = "friendly"
+service_tier = "default"
+
+[windows]
+sandbox = "elevated"
+
+[projects.'c:\users\user\desktop\quizlaa']
+trust_level = "trusted"
+
+[projects.'c:\users\user\documents\codex\2026-05-04\ai-add-a-codex-shortcut-at']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\codex']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\insurance-crm']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\ecoworld']
+trust_level = "trusted"
+
+[projects.'c:\users\user\documents\codex\2026-05-12\ai-if-i-use-5-3']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\ecoworld2']
+trust_level = "trusted"
+
+[projects.'c:\users\user\.codex']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\angel-interior']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\zenius']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\trash-container-app']
+trust_level = "trusted"
+
+[projects.'c:\users\user\documents\restore-local']
+trust_level = "trusted"
+
+[projects.'c:\users\user\documents\supabase-project-backup-restore']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\angel-interior\admin-panel-angel']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\vipbillion']
+trust_level = "trusted"
+
+[features]
+memories = true
+js_repl = false
+
+[marketplaces.openai-bundled]
+last_updated = "2026-06-03T08:39:32Z"
+source_type = "local"
+source = '\\?\C:\Users\user\.codex\.tmp\bundled-marketplaces\openai-bundled'
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-05-13T17:06:39Z"
+source_type = "local"
+source = '\\?\C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."google-drive@openai-curated"]
+enabled = true
+
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[plugins."supabase@openai-curated"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+# GitNexus — MCP knowledge-graph engine: gives the agent structural codebase
+# awareness (dependencies, call chains, blast radius) in one query.
+# Uses the global install (npm i -g gitnexus). Run `gitnexus analyze` inside a
+# git repo first so the server has a graph to serve.
+[mcp_servers.gitnexus]
+command = "C:\\Users\\user\\AppData\\Roaming\\npm\\gitnexus.cmd"
+args = ["mcp"]
+
+[mcp_servers.node_repl]
+args = []
+command = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\34ab3e1324cc55b5\node_repl.exe'
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = ""
+NODE_REPL_NODE_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\5b9024f90663758b\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\user\.codex'
+CODEX_HOME = 'C:\Users\user\.codex'
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "4b6bfaf4ed2ce9b5cd68e60a61642eb4927a36306ba8c8993f6058607b3530fb,e13c388c2427308a68dffc803e1f28316077b719672e4518a621ae6ab56ad7cf"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+CODEX_CLI_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\716dda49c14d31a0\codex.exe'
+
+[desktop]
+ambient-suggestions-enabled = true
+appearanceTheme = "dark"
+dictationDictionary = []
+git-pull-request-merge-method = "merge"
+conversationDetailMode = "STEPS_PROSE"
+worktree-keep-count = 10

@@ -1,0 +1,65 @@
+---
+name: design-psychology-2026
+description: "🧠 2026 EXPERIENCE ENGINE — ONBOARDING & CONVERSION PSYCHOLOGY (V1.0)"
+triggers: ["onboarding", "conversion", "ux", "psychology", "aha", "interest", "humanization"]
+version: 1.0
+status: authoritative
+---
+
+# 🧠 1. THE 2026 DESIGN ENGINE (V1.0 APEX)
+
+The psychological blueprint for capturing human interest in < 3 seconds and ensuring viral retention.
+
+## ⚡ THE "AHA MOMENT" FRAMEWORK (SIGN UP -> SET UP -> AHA)
+The core loop that transforms a visitor into a power user. Every design MUST aim for the **Aha Moment** before the checkout/hard-commitment.
+
+### A. The Bypass Loop (Alma Method)
+- **Concept**: "Try Before You Buy / Try Before You Join."
+- **Execution**: Allow users to perform the core value action (e.g., search clinicians, generate a mockup, analyze a file) *before* asking for an email.
+- **The Hook**: Show a "Preview of Victory" (blurred results, partial data) that only unlocks on sign-up.
+
+### B. Progressive Achievement (Duolingo Method)
+- **Concept**: Micro-wins before high-friction tasks.
+- **Execution**: User completes 3 quick, fun questions -> "You just unlocked 15% better accuracy" -> "Save your progress now (Email)."
+
+## 🧬 HUMANIZATION DNA (THE SOUL PROTOCOL)
+In an AI-saturated world, human touchpoints are the high-value differentiator.
+
+### A. The Founder's Touch
+- **Visual**: Inline "Handwritten" notes from the CEO/Founder (SVG signature, messy underlines).
+- **Copy**: "I built this because [Personal Pain Point]."
+- **Feedback**: Founder video or voice note embedded in the 'Thank You' or 'Success' state.
+
+### B. Ceiling-Breaker Copy
+- **Rule**: Kill corporate jargon.
+- **Style**: Conversational, slightly opinionated, and highly specific.
+- **Intent Support**: Support multiple intents simultaneously (e.g., "I'm just browsing" vs "I need this fixed today").
+
+## 🧪 AI PERSONALIZATION MANDATE
+AI must not just "be there"; it must produce immediate, visual proof of its labor.
+
+### A. The "Plan for You" Visualization
+- **Action**: Immediately after a quiz or data input, show a "Generating your unique protocol..." animation with real-time text updates.
+- **Outcome**: Deliver a personalized dashboard or PDF preview *before* the dashboard access is granted.
+
+### B. Proactive Feedback Loops
+- **Logic**: If a user hesitates (mouse hover on close), trigger a "Don't leave yet, look at what we found for you" micro-modal with a personalized discount or insight.
+
+## 🎨 2026 INTERACTION STANDARDS (PHYSICALITY & FLOW)
+- **Haptic UI**: Elements should feel heavy or elastic. Use "Ticket" or "Card" metaphors (tear-off headers, stacked cards).
+- **Physics-Based Transitions**: No linear fades. Use spring-damping for all modals and navigation.
+- **Multimodal Triggers**: Support voice/text/image upload in a single "Command Bar" (Omni-Box) interface.
+
+## 🛡️ AUDIT CHECKLIST (THE INTEREST CHECK)
+Each design must answer "YES" to:
+1. Is the first action < 2 clicks?
+2. Does it feel "Human" (vs Machine)?
+3. Is there an "Aha Moment" within 30 seconds?
+4. Is the layout "Adaptive" to user intent?
+
+## 🎨 3. VISUAL INTEGRATION (HANDSHAKE PROTOCOL)
+Ensures psychological triggers are rendered using the Sovereign Visual Standard ([dna_design.md](file:///C:/Users/user/.codex/memories/1_core/dna_design.md)).
+
+1. **Cinematic Triggers**: Use `backdrop-filter: blur(24px)` (Glass Formula) to isolate the "Aha Moment" UI from background noise.
+2. **Physics-Based Experience**: The bypass loop transitions (sliding into the "Victory Preview") must use `spring-damping` easing.
+3. **Atomic Consistency**: Humanization elements (SVG signatures, underlines) must use the Zinc/Onyx delta to prevent "visual clutter" that degrades the premium feel.

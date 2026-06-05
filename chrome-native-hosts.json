@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "chromeNativeHosts": [
+    {
+      "schemaVersion": 1,
+      "browserClientPath": "C:\\Users\\user\\.codex\\plugins\\cache\\openai-bundled\\chrome\\latest\\scripts\\browser-client.mjs",
+      "codexCliPath": "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\bin\\716dda49c14d31a0\\codex.exe",
+      "codexHome": "C:\\Users\\user\\.codex",
+      "extensionHostPath": "C:\\Users\\user\\.codex\\plugins\\cache\\openai-bundled\\chrome\\latest\\extension-host\\windows\\x64\\extension-host.exe",
+      "extensionIds": [
+        "hehggadaopoacecdllhhajmbjkdcmajg"
+      ],
+      "nativeHostName": "com.openai.codexextension",
+      "nodePath": "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\bin\\5b9024f90663758b\\node.exe",
+      "nodeReplPath": "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\bin\\34ab3e1324cc55b5\\node_repl.exe",
+      "pluginVersion": "26.527.60818",
+      "proxyHost": "127.0.0.1",
+      "proxyPort": 0,
+      "resourcesPath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.527.7698.0_x64__2p2nqsd0c76g0\\app\\resources",
+      "updatedAt": "2026-06-02T09:25:50.092Z"
+    }
+  ]
+}

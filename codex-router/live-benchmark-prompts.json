@@ -1,0 +1,66 @@
+{
+  "version": "1.1",
+  "updated": "2026-06-02",
+  "purpose": "Real model prompt pack for measuring token cost, routing quality, and speed after .codex changes.",
+  "prompts": [
+    {
+      "id": "knowledge-sentinel",
+      "lane": "routine",
+      "prompt": "ai read .codex knowledge",
+      "expectation": "Route once, compact context, ready sentinel behavior."
+    },
+    {
+      "id": "vben-admin-route",
+      "lane": "medium",
+      "prompt": "Trace a Vben admin relation bug and tell me which knowledge or skill route should load first.",
+      "expectation": "Project-type routing, evidence ladder, and GitNexus allowlist logic."
+    },
+    {
+      "id": "supabase-schema-debug",
+      "lane": "deep",
+      "prompt": "Debug a Supabase schema mismatch and explain which exact schema and evidence to inspect first.",
+      "expectation": "Schema-first reasoning, exact evidence, no guessing, file-based SQL workflow."
+    },
+    {
+      "id": "php-site-route",
+      "lane": "routine",
+      "prompt": "I need to inspect a PHP marketing site quickly. What route should load and what should stay deferred?",
+      "expectation": "PHP/static route, no GitNexus, docs-first orientation."
+    },
+    {
+      "id": "design-app-route",
+      "lane": "medium",
+      "prompt": "ai design app",
+      "expectation": "Direct skill route with minimal extra reads."
+    },
+    {
+      "id": "code-review-mode",
+      "lane": "deep",
+      "prompt": "Review this change for bugs and risks first.",
+      "expectation": "Findings-first review posture, severity ordering, testing gaps."
+    },
+    {
+      "id": "architecture-tradeoff",
+      "lane": "deep",
+      "prompt": "Explain the architecture tradeoffs for adding multi-agent workload to this .codex system.",
+      "expectation": "High-level but evidence-aware answer with tradeoffs and bounded scope."
+    }
+  ],
+  "capture_template": {
+    "provider": "",
+    "model": "",
+    "lane": "",
+    "reasoning_effort": "",
+    "run_utc": "",
+    "prompt_id": "",
+    "prompt_tokens": 0,
+    "cached_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0,
+    "estimated_cost_usd": 0,
+    "wall_clock_seconds": 0,
+    "route_correctness_10": 0,
+    "quality_10": 0,
+    "notes": ""
+  }
+}

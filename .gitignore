@@ -1,0 +1,71 @@
+﻿# --- Secrets / auth ---
+auth.json
+cap_sid
+installation_id
+*.key
+*.pem
+*.p12
+*.pfx
+*.token
+*.secret
+*.secrets
+
+# --- Local runtime state ---
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.log
+*.tmp
+*.pid
+session_index.jsonl
+.codex-global-state.json
+.codex-global-state.json.bak
+models_cache.json
+
+# --- Local/system folders ---
+.sandbox/
+.sandbox-bin/
+.sandbox-secrets/
+.tmp/
+tmp/
+cache/
+browser/
+sqlite/
+sessions/
+ambient-suggestions/
+
+# --- Plugin/vendor transient mirrors ---
+vendor_imports/
+
+# --- Python / Node noise ---
+__pycache__/
+*.pyc
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Keep important Codex knowledge/router/docs tracked ---
+!AGENTS.md
+!00_CODEX_START_HERE.md
+!00_CODEX_CUSTOM_INSTRUCTIONS_GEMINI_BRIDGE.md
+!00_CODEX_ROOT_AUDIT_AND_CLEANUP.md
+!00_PULSE.md
+!00_REASONING_EVOLUTION_PROTOCOL.md
+!00_CODEX_PERF_BENCHMARK.md
+!CODEX_FULL_ACCESS_ROUTING.md
+!CODEX_DYNAMIC_ROUTING.md
+!codex-router/
+!codex-router/Update-CodexRouting.ps1
+!codex-router/Watch-CodexRouting.ps1
+!memories/
+!skills/**/*
+!libraries/gemini-migrated/
+!rules/
+!README.md
+
+# --- CRITICAL: Exclude skills/.git (separate repo) ---
+skills/.git/
+skills/.git/**
+
