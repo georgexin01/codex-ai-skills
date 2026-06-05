@@ -1,0 +1,29 @@
+# --- Transient / temporary folders ---
+faucet/
+.system/
+*.tmp
+*.log
+
+# --- Node / Python ---
+node_modules/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# --- Local state (should not track in skills repo) ---
+*.sqlite
+*.db
+.env
+.env.local
+*.secret
+
+# --- Keep all skill folders tracked ---
+!*/
+!*.md
+!*.json
+!*.yaml
+!*.yml
+!*.ts
+!*.tsx
+!*.js
+!*.jsx

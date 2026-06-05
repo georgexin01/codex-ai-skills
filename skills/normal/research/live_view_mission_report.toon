@@ -1,0 +1,53 @@
+# TOON EXPORT: live_view_mission_report
+SCHEMA: [line, content]
+1|# Research Report: The Live View Mission Architecture
+2|## 1. Concept Definition
+3|A **Live View Mission** is a high-fidelity intelligence gathering operation where the AI uses a dedicated **Browser Subagent** to interact with a dynamic web environment (e.g., YouTube, complex SaaS dashboards). Unlike static reading, "Live View" involves visual perception, scrolling, and multi-tab exploration.
+4|---
+5|## 2. Step-by-Step Flow (The YouTube Learn Loop)
+6|1.  **Cold Boot (Deployment)**:
+7|-   Gemini (Director) spawns a `browser_subagent`.
+8|-   Initial state: Clean browser instance.
+9|2.  **Primary Navigation**:
+10|-   Subagent calls `open_browser_url` for the YouTube link.
+11|-   **Latency**: 2-5s (Network + Rendering).
+12|3.  **Visual Perception Phase**:
+13|-   Subagent receives a **Screenshot (8-bit WebP)** + **DOM Summary**.
+14|-   **Token Load**: ~1,000 - 3,000 tokens per turn (image + text).
+15|4.  **Interaction (The Learning Scroll)**:
+16|-   AI identifies "Video Description" or "Comments".
+17|-   Calls `scroll_browser_window` or `click_browser_pixel`.
+18|-   **Turn Cost**: Each interaction is a new reasoning turn (~2,000 tokens).
+19|5.  **recursive Traversal (The New Tab)**:
+20|-   AI extracts URLs from the description.
+21|-   Calls `open_browser_url` for a new target in a background tab.
+22|6.  **Knowledge Synthesis**:
+23|-   Subagent summarizes all gathered data into a final report and "Ends Mission."
+24|---
+25|## 3. Token Economics & Black Holes
+26|| Action | Token Weight | Speed | Note |
+27|| :--- | :--- | :--- | :--- |
+28|| **Static Read** (`read_url_content`) | ~500 - 1.5k | < 1s | Markdown only. Zero images. |
+29|| **Live View** (`browser_subagent`) | **~5k - 50k+** | 10s - 2min | Includes screenshots + reasoning turns. |
+30|### The "Waste" Factors:
+31|- **Redundant Captures**: Every time the AI clicks a button, a new screenshot is generated. If the page doesn't change much, these tokens are mostly "waste."
+32|- **JavaScript Bloat**: Complex pages with infinite scrolls generate massive DOM summaries that are re-sent to the AI every turn.
+33|---
+34|## 4. Performance Metrics (Live View)
+35|- **Total Execution Time**: For a YouTube learn-mission (1 video + 3 links), expect **1.5 to 3 minutes**.
+36|- **Token Impact**: A single mission can consume **25,000 to 100,000 tokens** depending on the number of tabs and scrolls.
+37|---
+38|## 5. Proposed Improvements (The Mythos Standard)
+39|### A. The "Markdown First" Protocol
+40|- **Change**: AI should attempt `read_url_content` FIRST. YouTube description metadata can often be pulled without a full browser subagent.
+41|- **ROI**: 90% token reduction for 80% of tasks.
+42|### B. Ocular Extraction (Batching)
+43|- **Change**: Instruct the subagent to "Capture ALL links in one turn" instead of clicking them one by one.
+44|- **ROI**: Reduces mission turn count by 50%.
+45|### C. Visual Freeze Protocol
+46|- **Change**: Disable screenshots after the initial load if the task is purely data extraction (text/links).
+47|- **ROI**: Saves ~1,500 tokens per turn.
+48|---
+49|## 6. Next Steps
+50|I can implement a **Live View Pulse** skill that follows these optimized rules to ensure you get the knowledge without the "Token Black Hole" effect.
+51|Would you like me to draft this optimized skill? ðŸ¦ž

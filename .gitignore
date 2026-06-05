@@ -65,7 +65,5 @@ pnpm-debug.log*
 !rules/
 !README.md
 
-# --- CRITICAL: Exclude skills/.git (separate repo) ---
-skills/.git/
-skills/.git/**
+# --- Skills now tracked by root .git (consolidated) ---
 
