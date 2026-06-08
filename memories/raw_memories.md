@@ -956,3 +956,138 @@ References:
 - Admin ignore updates: `.codex-dev-local.log`, `.codex/`, `.gemini/`, `.openai/`.
 - Website ignore updates: `run-local-*.log`, `*.temp`.
 
+## Thread `019e91bc-5e60-7063-99d3-669c03c77036`
+updated_at: 2026-06-05T10:06:37+00:00
+cwd: \\?\C:\Users\user\Desktop\VIPBillion
+rollout_path: C:\Users\user\.codex\sessions\2026\06\04\rollout-2026-06-04T16-25-01-019e91bc-5e60-7063-99d3-669c03c77036.jsonl
+rollout_summary_file: 2026-06-04T08-25-01-i1Lw-vipbillion_bootstrap_order_path_settings_rebrand.md
+
+---
+description: VIPBillion shared-Supabase bootstrap: root docs + website PHP API scaffold + verified order insert path; later settings/title rebrand work was partially completed, then user stopped the settings direction before it matched their desired shape
+task: VIPBillion bootstrap, website order-path verification, settings-table/title rebrand, starting-point skill update
+task_group: VIPBillion workspace bootstrap and rebrand
+task_outcome: partial
+cwd: C:\Users\user\Desktop\VIPBillion
+keywords: VIPBillion, Vben, PHP website, Supabase, starting-point, settings table, sidebar title, project branding, order create API, RLS, PGRST301, PGRST102, service key, .codexignore, root docs
+---
+
+### Task 1: Read .codex knowledge / inspect the project bootstrap context
+task: Read PULSE, shared DB contract, admin WORKING_PROGRESS, website WORKING_PROGRESS, website SKILL, and the reference project docs; inspect VIPBillion workspace shape and customer brief
+task_group: `.codex` bootstrap / project orientation
+task_outcome: success
+
+Preference signals:
+- when the user said `ai read .codex knowledge` and later asked to read the project plan and build from there, this reinforced route-first `.codex` hydration before workspace work.
+
+Reusable knowledge:
+- `admin-vipbillion` is the Vben admin schema owner and `website-vipbillion` is the PHP + Supabase REST consumer.
+- `information.md` is the raw source brief to translate into docs and modules.
+
+Failures and how to do differently:
+- Avoid broad crawling; hydrate route-first docs first, then read only the needed project files.
+
+References:
+- `C:\Users\user\Desktop\VIPBillion\information.md`
+- `C:\Users\user\.codex\00_PULSE.md`
+- `C:\Users\user\.codex\skills\SHARED_DB_CONTRACT.md`
+
+### Task 2: Bootstrap workspace docs, ignore files, and website API scaffold
+task: Create root onboarding docs, aligned ignore files, and minimal PHP website API consume-layer scaffold
+task_group: workspace/bootstrap/docs + website API scaffold
+task_outcome: success
+
+Preference signals:
+- when the user asked for a reusable `skills/starting-point` flow, this indicated they want future AI sessions to bootstrap from docs and routes rather than repeated instructions.
+
+Reusable knowledge:
+- Root docs now serve as the onboarding contract for future AI sessions.
+- The website PHP consume-layer can be bootstrapped minimally first, then expanded.
+
+Failures and how to do differently:
+- Large patches can fail on copied-file formatting; use smaller targeted patches when needed.
+
+References:
+- `PROJECT_INFO.md`, `PROJECT_RESEARCH.md`, `PROJECT_KNOWLEDGE.md`, `WORKSPACE.md`, `DATABASE.md`, `CROSSWALK.md`, `STATUS.md`
+- `website-vipbillion/api/Config.php`
+- `website-vipbillion/api/core/SupabaseClient.php`
+
+### Task 3: Verify and fix the first website order-create path
+task: Make the PHP website create a real `vipbillion.orders` row in local Supabase and update project truth docs
+task_group: website API / Supabase order insertion
+task_outcome: success
+
+Preference signals:
+- the user’s brief emphasized booking/order flow, deposit handling, and payment handoff, making the website-to-Supabase insert path a priority.
+
+Reusable knowledge:
+- Local Supabase REST initially rejected old auth assumptions with `PGRST301` and then RLS with `42501` until the website API matched the local contract.
+- For backend writes, the PHP API correctly uses the local Supabase service key.
+
+Failures and how to do differently:
+- PowerShell quoting can obscure raw PostgREST errors; the cleanest verification was a direct PHP export of the REST response.
+
+References:
+- `website-vipbillion/api/core/SupabaseClient.php`
+- `admin-vipbillion/apps/web-antd/src/sql/migrations/057_vipbillion_anon_project_header_fallback.sql`
+- Verified row `VB-TEST-009`
+
+### Task 4: Read settings table and rebrand the admin title / sidebar label path
+task: Switch the settings view from stale Angel table assumptions toward the real VIPBillion `settings` rows and align the visible project title path
+task_group: admin rebrand / settings module
+task_outcome: partial
+
+Preference signals:
+- the user asked: `ai update the setting table with supabase data` and to replace `Angel Interior Admin` with the project title.
+- the user later clarified: `make sure to change slidemenu title of the project to correct vipbillion name`.
+- the user then said: `this is not how i wanted for setting stop... i will continue next day` -> pause immediately when the settings direction is off.
+
+Reusable knowledge:
+- `vipbillion.settings` is a live key/value table, not the old single-row `app_settings` model.
+- The sidebar/header title is driven by the shared app-title/preferences/logo path, so title rebranding must stay aligned across env and layout components.
+- The user prefers the agent to stop when the settings direction is wrong rather than continue polishing the wrong implementation.
+
+Failures and how to do differently:
+- The settings rewrite was partial and not in the shape the user wanted; do not continue it without re-confirming the desired UI/behavior.
+- Several lint/style iterations were still in progress when the user stopped the work.
+
+References:
+- `admin-vipbillion/apps/web-antd/.env.development.localhost`
+- `admin-vipbillion/apps/web-antd/.env.development`
+- `admin-vipbillion/apps/web-antd/.env.development.supabase`
+- `admin-vipbillion/apps/web-antd/.env.production`
+- `admin-vipbillion/apps/web-antd/src/preferences.ts`
+- `admin-vipbillion/apps/web-antd/src/views/settings/setting-list.vue`
+- `admin-vipbillion/apps/web-antd/src/views/settings/drawer/setting-edit-drawer.vue`
+- `admin-vipbillion/apps/web-antd/src/views/settings/setting-form.vue`
+- `packages/effects/layouts/src/authentication/authentication.vue`
+- `packages/@core/ui-kit/shadcn-ui/src/components/logo/logo.vue`
+
+### Task 5: Add a reusable starting-point protocol for future projects
+task: Inspect and adjust the new-project bootstrap skill so it records the rebrand/title checkpoint for future runs
+task_group: `.codex` reusable starting-point workflow
+task_outcome: success
+
+Preference signals:
+- the user explicitly wanted a reusable `skills/starting-point` flow for future projects.
+
+Reusable knowledge:
+- `skills/starting-point` is the right place for new-project bootstrap routing and doc-stack expectations.
+
+References:
+- `C:\Users\user\.codex\skills\starting-point\skill.md`
+
+### Task 6: User stopped the settings work and asked to continue another day
+task: Stop the current settings direction and preserve state for the next session
+task_group: user-directed pause / continuation later
+task_outcome: success
+
+Preference signals:
+- `this is not how i wanted for setting stop... i will continue next day` -> pause immediately when the settings shape is wrong.
+
+Reusable knowledge:
+- Treat the current settings work as a partial draft, not a finished implementation.
+- When the user says stop on a UI/settings direction, do not keep iterating; wait for the next session.
+
+References:
+- User wording: `this is not how i wanted for setting stop... i will continue next day`
+

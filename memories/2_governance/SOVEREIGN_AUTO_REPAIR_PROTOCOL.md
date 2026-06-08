@@ -1,8 +1,8 @@
 ---
 name: sovereign-auto-repair-protocol
-description: "主权自动修复协议 (SARP V1.2) — 自动识别并修复环境漂移与版本冲突错误。含 PHP CLI server 白屏修复。"
-triggers: ["error", "bug", "build fail", "tailwind v4", "postcss", "initialization", "white screen", "localhost", "php server", "blank page"]
-version: 1.2
+description: "主权自动修复协议 (SARP V1.3) — 自动识别并修复环境漂移与版本冲突错误。含 PHP CLI server 白屏修复 + Supabase 端口冲突禁令。"
+triggers: ["error", "bug", "build fail", "tailwind v4", "postcss", "initialization", "white screen", "localhost", "php server", "blank page", "port conflict", "already allocated", "supabase stop", "project-id"]
+version: 1.3
 status: authoritative
 ---
 
@@ -36,6 +36,46 @@ status: authoritative
     ```
 *   **诊断方法**: 若页面白屏，运行 `Invoke-WebRequest -Uri "http://localhost:PORT" -UseBasicParsing | Select-Object @{N='bytes';E={$_.Content.Length}}` — 若返回 `0`，立即检查启动命令。
 *   **预防规则**: 启动任何 Sovereign PHP 网站前，先读取项目根目录的 `index.php`，确认其中有路由注册逻辑（`get('/', ...)`）。若有，用 `index.php` 作入口。
+
+### 1.6 🚨 BANNED: Stopping a Running Supabase Project to Resolve Port Conflicts
+
+*   **症状 / Trigger**: `supabase start` fails with "port is already allocated" because another Supabase project is already running on the same port (e.g. 54322).
+*   **根本原因 / Root Cause**: AI attempted to clear the port conflict by stopping the existing running project (`supabase stop --project-id <other-project>`), then starting a new one. This destroys the active session and forces a cold start on the user's live project.
+*   **BANNED ACTIONS — NEVER DO THESE**:
+    ```bash
+    # ❌ NEVER stop another project to free a port
+    supabase stop --project-id local-supabase
+    supabase stop --project-id <any-other-project>
+
+    # ❌ NEVER start a different workdir to work around a port conflict
+    supabase start --workdir <different-path>
+    ```
+*   **正确处理 / Correct Response**:
+    1. **STOP and ask the user** which project is currently running and what they want to do.
+    2. If the already-running project IS the target project (e.g. `local-supabase` serves VIPBillion), connect to it directly — no restart needed.
+    3. Never assume that stopping the conflicting project is safe. It may be the user's primary active database.
+*   **记忆规则**: The canonical local Supabase for VIPBillion is **`local-supabase`** at workdir `C:\Users\user\Documents\local-supabase`. Always connect to it. Never start a competing instance.
+
+### 1.7 🐳 Docker Container Registry — Canonical vs Legacy
+
+**PROTECTED (never stop, never remove):**
+| Container | Status | Role |
+|-----------|--------|------|
+| `local-supabase` | ✅ Always running (green) | Single shared Supabase for ALL projects — VIPBillion, Angel Interior, QuizLAA, etc. |
+
+**LEGACY (safe to remove if confirmed unused):**
+| Container | Notes |
+|-----------|-------|
+| `admin-vipbillion` | Outdated — superseded by `local-supabase` |
+| `admin-panel-quizLaa` | Outdated — superseded by `local-supabase` |
+| `website-angel-interior` | Outdated website dev container |
+| `restore-local` | One-time restore utility, no longer needed |
+
+**Rules:**
+- `local-supabase` is the **single source of truth** for all local DB work. It is FIXED and PERMANENT.
+- When port 54322 is already allocated, it means `local-supabase` is running — that is CORRECT. Do not stop it.
+- Legacy `admin-xxxx` / `website-xxxx` containers are from old per-project Supabase setups. They hold no live data. User may delete them at any time.
+- AI must NEVER suggest removing or stopping `local-supabase` for any reason.
 
 ## 🔄 2. 自动化集成规则
 *   **初始化检查**: 在执行 `APP_BLUEPRINT.md` 的第一步（环境搭建）时，AI 必须首先检查是否已安装 Tailwind v4 和 Supabase。若存在，必须立即执行上述 1.3 和 1.4 的预防性修复动作。

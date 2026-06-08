@@ -11,7 +11,40 @@
 - [Read-Before-Answer](2_governance/READ_BEFORE_ANSWER_PROTOCOL.md) — Read the actual file before answering anything about existing code, schema, or config.
 - [Constraint-First Thinking](2_governance/CONSTRAINT_FIRST_PROTOCOL.md) — List scope/locked/pattern/stack/schema constraints before proposing any solution.
 - [Confidence Declaration](2_governance/CONFIDENCE_DECLARATION_PROTOCOL.md) — Rate HIGH/MEDIUM/LOW before acting. Never write code at LOW confidence.
+- [Session Start](2_governance/SESSION_START_PROTOCOL.md) — Boot sequence: identify project → SHARED_DB_CONTRACT → anchor task position.
 
+# Task Group: VIPBillion workspace bootstrap, website order-path verification, and admin title/settings rebrand
+scope: Use when a future run needs the VIPBillion root doc stack, PHP website consume layer, local Supabase order-create path, or the paused settings/title rebrand context.
+applies_to: cwd=\\?\C:\Users\user\Desktop\VIPBillion; reuse_rule=safe for this checkout family while `admin-vipbillion`, `website-vipbillion`, root onboarding docs, and the shared local Supabase contract remain the truth sources
+## Task 1: Read `.codex` knowledge, bootstrap root docs, and scaffold the website API layer, success
+### rollout_summary_files
+- rollout_summaries/2026-06-04T08-25-01-i1Lw-vipbillion_bootstrap_order_path_settings_rebrand.md (cwd=\\?\C:\Users\user\Desktop\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\06\04\rollout-2026-06-04T16-25-01-019e91bc-5e60-7063-99d3-669c03c77036.jsonl, updated_at=2026-06-05T10:06:37+00:00, thread_id=019e91bc-5e60-7063-99d3-669c03c77036, established root onboarding docs and a minimal PHP + Supabase REST consume layer)
+### keywords
+- VIPBillion, information.md, PROJECT_INFO.md, PROJECT_KNOWLEDGE.md, STATUS.md, website-vipbillion/api, starting-point, SHARED_DB_CONTRACT
+## Task 2: Verify and fix the first website order-create path into local Supabase, success
+### rollout_summary_files
+- rollout_summaries/2026-06-04T08-25-01-i1Lw-vipbillion_bootstrap_order_path_settings_rebrand.md (cwd=\\?\C:\Users\user\Desktop\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\06\04\rollout-2026-06-04T16-25-01-019e91bc-5e60-7063-99d3-669c03c77036.jsonl, updated_at=2026-06-05T10:06:37+00:00, thread_id=019e91bc-5e60-7063-99d3-669c03c77036, verified a real `vipbillion.orders` insert as `VB-TEST-009`)
+### keywords
+- VIPBillion, vipbillion.orders, SupabaseClient.php, PGRST301, 42501, sb_publishable_, X-Project-Id, service key, VB-TEST-009, 057_vipbillion_anon_project_header_fallback.sql
+## Task 3: Rebrand the admin title/settings path, then stop when the settings direction was wrong, partial
+### rollout_summary_files
+- rollout_summaries/2026-06-04T08-25-01-i1Lw-vipbillion_bootstrap_order_path_settings_rebrand.md (cwd=\\?\C:\Users\user\Desktop\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\06\04\rollout-2026-06-04T16-25-01-019e91bc-5e60-7063-99d3-669c03c77036.jsonl, updated_at=2026-06-05T10:06:37+00:00, thread_id=019e91bc-5e60-7063-99d3-669c03c77036, settings rewrite remained partial after the user stopped the direction)
+### keywords
+- VIPBillion Admin, Angel Interior Admin, slidemenu title, vipbillion.settings, setting-list.vue, setting-form.vue, preferences.ts, authentication.vue, logo.vue, this is not how i wanted for setting stop
+## User preferences
+- when the user said `ai read .codex knowledge` and asked to "read the project plan and build from there" -> start VIPBillion work with route-first `.codex` hydration plus the root brief/docs before code spelunking [Task 1]
+- when the user asked for a reusable `skills/starting-point` flow and wanted future AI to auto-read it -> prefer bootstrap docs and reusable startup routing over repeated hand-holding on new projects [Task 1]
+- when the user said `this ai make sure to change slidemenu title of the project to correct vipbillion name` -> treat visible project-title rebranding as part of copied-admin cleanup, not a cosmetic afterthought [Task 3]
+- when the user said `this is not how i wanted for setting stop... i will continue next day` -> stop immediately when a settings/UI direction is off instead of polishing the wrong shape [Task 3]
+## Reusable knowledge
+- The root onboarding contract for this workspace is `PROJECT_INFO.md`, `PROJECT_RESEARCH.md`, `PROJECT_KNOWLEDGE.md`, `WORKSPACE.md`, `DATABASE.md`, `CROSSWALK.md`, and `STATUS.md`; `information.md` is the raw brief they were derived from [Task 1]
+- `admin-vipbillion` is the Vben/schema owner and `website-vipbillion` is the PHP + Supabase REST consumer; `skills/starting-point` is the durable place for future bootstrap expectations [Task 1]
+- For server-side website writes in this stack, the PHP API should use the local Supabase service key; the verified order-create path required the current `sb_publishable_...` key, `X-Project-Id`, and a backend write model rather than older anon/JWT assumptions [Task 2]
+- `vipbillion.settings` is a live key/value table, not the older single-row `app_settings` model; title rebranding must stay aligned across env, preferences, and shared logo/layout components [Task 3]
+## Failures and how to do differently
+- If local PostgREST returns `PGRST301` or `42501` on VIPBillion writes, check the active publishable key, project-header resolution, and whether the endpoint should use the backend service key before touching frontend flow assumptions [Task 2]
+- PowerShell quoting obscured some raw PostgREST errors here -> the cleanest verification was a direct PHP export of the REST response plus the inserted row check for `VB-TEST-009` [Task 2]
+- The settings rewrite was partial and the user explicitly stopped it; do not continue that implementation path without re-confirming the desired settings-page layout/behavior first [Task 3]
 # Task Group: angel-interior root cleanup, canonical handoff docs, and ignore-file hygiene
 scope: Use when cleaning the Angel Interior root, deciding whether legacy wrapper scripts/docs can be removed, or tightening ignore files across root/admin/website without hiding important project assets.
 applies_to: cwd=\\?\C:\Users\user\Desktop\angel-interior; reuse_rule=safe for this checkout family while `STATUS.md`, root handoff docs, ignore files, and `website-angel-interior` / `admin-panel-angel` remain the truth sources

@@ -102,7 +102,26 @@ rules: "Modes are additive to Tier-0/1, never subtractive. A mode untriggered fo
 ## 7. DEEP DIVE
 Triggered by `deep dive` / `deeper` / `thorough` / `review`. Read target files line-by-line (no skimming), proceed sequentially, higher token density authorized, every proposed change maps to a specific finding, pros/cons view per major decision.
 
-## 8. EMERGENCY RECOVERY
+## 8. ACTIVE BEHAVIOR PROTOCOLS
+These are always-on rules loaded from `2_governance/` and `1_core/`. AI must apply them on every task — no trigger required.
+
+| Protocol | Rule |
+|---|---|
+| C-Unit Composition | Atomic functions only. C+C+C. Scan before writing. |
+| Scan-Before-Write | Search existing code before writing anything new. Declare result. |
+| Single Truth Source | Every value/logic in ONE place. Everything else imports it. |
+| Contract-First | Define input+output before writing any function body. |
+| Cross-Skill Ripple | Schema/API change in one track → flag sibling impacts immediately. |
+| Task Position Anchor | State `[TASK X/N — track]` before every action. Never skip. |
+| Bilingual Gate | Only fires when `_en/_cn` pairs detected. Hard stop if one missing. |
+| Read-Before-Answer | Read the actual file before answering about existing code/schema. |
+| Constraint-First | List scope/locked/pattern/stack before proposing any solution. |
+| Confidence Declaration | Rate HIGH/MEDIUM/LOW before acting. Stop at LOW. |
+| Session Start | On new session: identify project → read SHARED_DB_CONTRACT → anchor task position. |
+
+Full protocol files: `memories/1_core/C_UNIT_COMPOSITION.md`, `memories/2_governance/*_PROTOCOL.md`
+
+## 9. EMERGENCY RECOVERY
 1. **Drift** — on path drift (files missing, index stale), regenerate via `Update-CodexRouting.ps1` (if available) or re-resolve via the `00_CODEX_START_HERE.md` fallback chain before proceeding.
 2. **Tool failure** — after 3 consecutive tool errors, stop active planning and re-verify route/paths before retrying.
 3. **Corruption** — if `0_apex/` content appears corrupted or non-parsable, lock write operations and alert the user.
