@@ -1,4 +1,17 @@
 <!-- AI GOVERNANCE: MAX 300 LINES. When adding new task groups, trim oldest from bottom. Auto-trim fires on rot-audit when line count exceeds 300. -->
+
+# AI Behavior Protocols (Core Rules — Always Active)
+- [C-Unit Composition](1_core/C_UNIT_COMPOSITION.md) — Atomic functions only. Compose C+C+C. Scan before writing. No monoliths.
+- [Scan-Before-Write](2_governance/SCAN_BEFORE_WRITE_PROTOCOL.md) — Always search existing code before writing new functions. Declare scan result.
+- [Single Truth Source](2_governance/SINGLE_TRUTH_SOURCE_PROTOCOL.md) — Every value/logic lives in ONE place. Everything else imports it.
+- [Contract-First](2_governance/CONTRACT_FIRST_PROTOCOL.md) — Define input+output shape before writing any function body.
+- [Cross-Skill Ripple](2_governance/CROSS_SKILL_RIPPLE_PROTOCOL.md) — Schema/API changes in one track (claude/claude-app/claude-website) must flag sibling impacts.
+- [Task Position Anchor](2_governance/TASK_POSITION_ANCHOR_PROTOCOL.md) — Always declare [TASK X/N — track] before acting. Never skip or jump.
+- [Bilingual Gate](2_governance/BILINGUAL_GATE_PROTOCOL.md) — Only when _en/_cn pairs detected: gate fires if one half is missing from form/INSERT/store.
+- [Read-Before-Answer](2_governance/READ_BEFORE_ANSWER_PROTOCOL.md) — Read the actual file before answering anything about existing code, schema, or config.
+- [Constraint-First Thinking](2_governance/CONSTRAINT_FIRST_PROTOCOL.md) — List scope/locked/pattern/stack/schema constraints before proposing any solution.
+- [Confidence Declaration](2_governance/CONFIDENCE_DECLARATION_PROTOCOL.md) — Rate HIGH/MEDIUM/LOW before acting. Never write code at LOW confidence.
+
 # Task Group: angel-interior root cleanup, canonical handoff docs, and ignore-file hygiene
 scope: Use when cleaning the Angel Interior root, deciding whether legacy wrapper scripts/docs can be removed, or tightening ignore files across root/admin/website without hiding important project assets.
 applies_to: cwd=\\?\C:\Users\user\Desktop\angel-interior; reuse_rule=safe for this checkout family while `STATUS.md`, root handoff docs, ignore files, and `website-angel-interior` / `admin-panel-angel` remain the truth sources

@@ -1,8 +1,8 @@
 ---
 name: sovereign-auto-repair-protocol
-description: "主权自动修复协议 (SARP V1.0) — 自动识别并修复环境漂移与版本冲突错误。"
-triggers: ["error", "bug", "build fail", "tailwind v4", "postcss", "initialization"]
-version: 1.0
+description: "主权自动修复协议 (SARP V1.2) — 自动识别并修复环境漂移与版本冲突错误。含 PHP CLI server 白屏修复。"
+triggers: ["error", "bug", "build fail", "tailwind v4", "postcss", "initialization", "white screen", "localhost", "php server", "blank page"]
+version: 1.2
 status: authoritative
 ---
 
@@ -22,6 +22,20 @@ status: authoritative
 *   **症状**: 报错 `Invalid supabaseUrl: Must be a valid HTTP or HTTPS URL`。
 *   **根本原因**: 在原型阶段缺失环境变量导致 `createClient` 崩溃。
 *   **修复动作**: 在 `lib/supabase.js` 中实施 **Safe-Init** 逻辑。使用 `Proxy` 劫持客户端对象，确保即使缺失配置，应用也能静默运行 UI 原型。
+
+### 1.5 PHP CLI Server 白屏 / 0字节响应 (Sovereign Website Pattern)
+*   **症状**: `php -S localhost:PORT` 启动后，浏览器显示白屏，响应体为 **0 bytes**（HTTP 200 但无内容）。
+*   **根本原因**: AI 错误地将 `router.php`（仅定义路由函数，不注册路由）作为 PHP CLI server 的入口脚本。`router.php` 执行完毕无任何输出。
+*   **正确命令**: **必须**使用 `index.php`（或等效的前端控制器文件）作为入口：
+    ```bash
+    # ✅ 正确 — index.php 是注册所有路由的前端控制器
+    php -S localhost:8080 index.php
+
+    # ❌ 错误 — router.php 只定义函数，不注册路由，输出为空
+    php -S localhost:8080 router.php
+    ```
+*   **诊断方法**: 若页面白屏，运行 `Invoke-WebRequest -Uri "http://localhost:PORT" -UseBasicParsing | Select-Object @{N='bytes';E={$_.Content.Length}}` — 若返回 `0`，立即检查启动命令。
+*   **预防规则**: 启动任何 Sovereign PHP 网站前，先读取项目根目录的 `index.php`，确认其中有路由注册逻辑（`get('/', ...)`）。若有，用 `index.php` 作入口。
 
 ## 🔄 2. 自动化集成规则
 *   **初始化检查**: 在执行 `APP_BLUEPRINT.md` 的第一步（环境搭建）时，AI 必须首先检查是否已安装 Tailwind v4 和 Supabase。若存在，必须立即执行上述 1.3 和 1.4 的预防性修复动作。
