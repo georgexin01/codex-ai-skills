@@ -3,11 +3,11 @@ name: pulse
 description: "⚡ PULSE — single boot read. Hot rules + trigger map + reasoning profile in one file. Everything else is lazy/deferred."
 triggers: ["ai", "boot", "start", "ai read .codex knowledge"]
 phase: boot
-model_hint: ["claude-code", "codex-gpt-5.3"]
-version: 1.0
+model_hint: ["claude-fable-5", "claude-code", "codex-gpt-5.3"]
+version: 1.1
 status: authoritative
 supersedes_in_boot: ["00_CODEX_CUSTOM_INSTRUCTIONS_CODEX_BRIDGE.md", "CODEX_FULL_ACCESS_ROUTING.md"]
-date_updated: "2026-06-02"
+date_updated: "2026-06-11"
 ---
 
 # ⚡ PULSE — Single Boot Read
@@ -52,7 +52,7 @@ When rules compete, obey this order:
 "ai mode deep":       "memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md"
 "ai reply terse":     "memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md"
 "ai benchmark live":  "memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md"
-route_miss: "skills → memories/2_governance/artifacts/skill_path_router.md (semantic skill index). knowledge → grep memories/ by filename + frontmatter description/triggers. manifest = path/integrity index only (no descriptions) — never full-read."
+route_miss: "skills → memories/2_governance/artifacts/skill_path_router.md (semantic skill index). knowledge → grep memories/ by filename + frontmatter description/triggers, EXCLUDING history (memories/archive/, memories/rollout_summaries/, memories/raw_memories.md — on disk but out of routing). manifest = path/integrity index only (no descriptions) — never full-read."
 ```
 
 Sentinel rule: `ai read .codex knowledge` performs route-first selective loading once per chat, stores compact in-session context, then replies only with the ready sentinel. Do not repeat the read on every message.
@@ -116,7 +116,8 @@ Vue 3 + TS + Pinia + Tailwind + Vben Admin + Supabase/Postgres · PHP for sites.
 - Historical rollouts/artifacts — only when explicitly needed.
 
 ## 7. Reasoning Profile (compact)
-Routine: Goal-contract + assumption-tag + token-discipline + verified-output (+ drift-guard if long). Medium: add evidence-ladder, hypothesis-test, risk+rollback. Deep/high-risk (`deep/thorough/review`): all 11 (+ counterexample check). Full set: `00_REASONING_EVOLUTION_PROTOCOL.md`.
+Routine: Goal-contract + assumption-tag + token-discipline + verified-output (+ drift-guard if long). Medium: add evidence-ladder, hypothesis-test, risk+rollback. Deep/high-risk (`deep/thorough/review`): all 12 (incl. counterexample check + drift-guard checkpoint). Full set: `00_REASONING_EVOLUTION_PROTOCOL.md`.
+- **Fable-5 lane** (when `model_hint` resolves to `claude-fable-5`): native multi-step reasoning is strong — do the reasoning internally instead of emitting scaffolding prose; spend the saved tokens on one extra counterexample/edge check before final answer. Locks are NON-negotiable regardless of model: evidence-ladder, verify-before-done, drift-guard, edit-tiers, data-sovereignty still apply. Stronger reasoning lowers output verbosity, never lowers verification.
 - **Drift Guard**: every 3–5 tool batches re-read the anchor (originating request); classify on-track/minor/major; revert on major.
 - **Output length**: hydration = 1 line · routine = outcome + 1 validation line · summary ≤100 words · architecture ≤250 words. No filler.
 - **Comparison tables (MANDATORY)**: any comparison/before-after table MUST include token cost, speed, % speed increase, rating 1/10. Estimate + flag if exact unknown; never drop a column.

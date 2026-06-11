@@ -614,7 +614,7 @@ This is intentional: rem scales the *content*, fixed pixels lock the *chrome*.
 
 ## 7. When this file applies
 
-- Every new mobile app built per [MOBILE_APP_DESIGN_RECIPE.md](MOBILE_APP_DESIGN_RECIPE.md).
+- Every new mobile app built per [MOBILE_APP_DESIGN_RECIPE.md](../MOBILE_APP_DESIGN_RECIPE.md).
 - Every refactor / audit of header or footer in any existing project.
 - Every BLUEPRINT.md / DESIGN.md should reference these rules in §5 (Design DNA) and §9 (compliance).
 

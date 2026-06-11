@@ -42,7 +42,7 @@ date_added: "2026-05-08"
 11. **APEX 0 gate** — never write to `.codex/memories/` or `.codex/skills/` without explicit per-file user authorization in chat.
 12. **`replace_all` guardrail** — before every `replace_all` Edit, **grep first**. If the OLD name appears anywhere the NEW name will land (e.g. inside a computed that consumes the old as a source), the rename is unsafe → switch to scoped per-occurrence Edits. carMVP iteration-3 lost 1 hour to a self-referencing computed that was created by a careless `replace_all`. Never repeat.
 13. **Tabs MUST swap content panels, not just the underline indicator** — `activeTab` must drive a downstream `<template v-if="activeTab === 'X'">` block OR a `computed` data slice. A tab strip that only changes its own visual state is a defect. Verified at Phase E (see verify checklist).
-14. **Taste Commit BEFORE Phase A** — before scaffolding, output a "Taste Commit" block per [MOBILE_APP_DESIGN_RECIPE.md §0.5](../../../knowledge/MOBILE_APP_DESIGN_RECIPE.md). Restate the 7 taste rules in the project's own terms. Skipping this drives 5x feedback loops.
+14. **Taste Commit BEFORE Phase A** — before scaffolding, output a "Taste Commit" block per [MOBILE_APP_DESIGN_RECIPE.md §0.5](../../../memories/MOBILE_APP_DESIGN_RECIPE.md). Restate the 7 taste rules in the project's own terms. Skipping this drives 5x feedback loops.
 
 ## The 6-phase workflow
 
@@ -189,9 +189,9 @@ Common Phase F outputs:
 
 ## Resources
 
-- [`MOBILE_APP_DESIGN_RECIPE.md §N`](../../../knowledge/MOBILE_APP_DESIGN_RECIPE.md) — full carMVP feedback section
+- [`MOBILE_APP_DESIGN_RECIPE.md §N`](../../../memories/MOBILE_APP_DESIGN_RECIPE.md) — full carMVP feedback section
 - [`DESIGN_SOP.md §5`](../../../memories/1_core/DESIGN_SOP.md) — Form Components principle
 - [`tailwind-design-system/skill.md`](../design/systems/tailwind-design-system/skill.md) — 9-component CVA recipes
-- [`CLAUDE_BLUEPRINT_RECIPE.md`](../../../knowledge/CLAUDE_BLUEPRINT_RECIPE.md) — blueprint.md authoring spec
+- [`CLAUDE_BLUEPRINT_RECIPE.md`](../../../memories/CLAUDE_BLUEPRINT_RECIPE.md) — blueprint.md authoring spec
 - [`USER_DNA.md`](../../../memories/0_apex/USER_DNA.md) — Trusta Industrial taste fingerprint
 - [`HEADER_FOOTER_DESIGN_RULES.md`](../../../memories/1_core/HEADER_FOOTER_DESIGN_RULES.md) — header/footer hard rules

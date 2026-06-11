@@ -16,7 +16,7 @@ Ensuring zero-detection automated navigation through platform-aware "Humanoid Ji
 
 ## 🚀 The Protocol
 
-1. **DNA Hydration**: Pull `Ghost Stealth V5.0` logic from **[dna_faucet.md](../../../knowledge/1_core/dna_faucet.md)**.
+1. **DNA Hydration**: Pull `Ghost Stealth V5.0` logic from **[dna_faucet.md](../../../memories/1_core/DNA_FAUCET.md)**.
 2. **Behavioral Injection**: 
     - Randomize viewport scrolling.
     - Vary click-holding times (20ms-50ms).

@@ -41,10 +41,10 @@ Skip the meta-loop for:
 
 ## Related
 
-- [AOE_PROTOCOL.md](../../knowledge/2_governance/AOE_PROTOCOL.md) — tier matrix
-- [KARPATHY_OPERATIONAL_STANDARD.md](../../knowledge/2_governance/KARPATHY_OPERATIONAL_STANDARD.md) — 13 Apex Principles
-- [SOVEREIGN_COMPARISON_PROTOCOL.md](../../knowledge/2_governance/SOVEREIGN_COMPARISON_PROTOCOL.md) — SCP mandate
-- [SCREENSHOT_HYGIENE.md](../../knowledge/2_governance/SCREENSHOT_HYGIENE.md) — purge after use
+- [AOE_PROTOCOL.md](../../memories/archive/AOE_PROTOCOL.md) — tier matrix
+- [KARPATHY_OPERATIONAL_STANDARD.md](../../memories/0_apex/GROUND_KERNEL.md) — 13 Apex Principles
+- [SOVEREIGN_COMPARISON_PROTOCOL.md](../../memories/2_governance/MODULE_AUDIT_PROTOCOL.md) — SCP mandate
+- [SCREENSHOT_HYGIENE.md](../../memories/2_governance/SCREENSHOT_HYGIENE.md) — purge after use
 
 ---
 **Registry V2.0 — 2026-04-23 · Plan→Execute→Validate loop formalized**

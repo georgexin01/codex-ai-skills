@@ -182,7 +182,7 @@ If the project doesn't yet have visual definition, generate DESIGN.md alongside 
 
 When writing the blueprint, **always** cite User DNA standards by name:
 
-- 700 default heading weight, 900 reserved for numerical spectacle, never below 500 — [USER_DNA.md](USER_DNA.md).
+- 700 default heading weight, 900 reserved for numerical spectacle, never below 500 — [USER_DNA.md](0_apex/USER_DNA.md).
 - 6 px progress bars — non-negotiable.
 - Glass for modals/overlays.
 - Clickable cards over isolated buttons.

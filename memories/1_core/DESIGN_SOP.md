@@ -53,9 +53,9 @@ Used for transient feedback or focused entry (Login).
 ## 5. Mobile-Template Patterns — see MOBILE_APP_DESIGN_RECIPE.md
 > Form components, tag wiring, and brand logo patterns previously lived here as §5-7 (carMVP iteration 2). To eliminate duplication, they have been consolidated into the canonical recipe:
 >
-> - **Form components (Tailwind + Headless UI + CVA, 9-component canonical set)** → [MOBILE_APP_DESIGN_RECIPE.md §N.4](MOBILE_APP_DESIGN_RECIPE.md)
-> - **Tag / Chip / Subtab Wiring Mandate** → [MOBILE_APP_DESIGN_RECIPE.md §N.9](MOBILE_APP_DESIGN_RECIPE.md)
-> - **Brand Logo 3-Tier Fallback** → [MOBILE_APP_DESIGN_RECIPE.md §N.10](MOBILE_APP_DESIGN_RECIPE.md)
+> - **Form components (Tailwind + Headless UI + CVA, 9-component canonical set)** → [MOBILE_APP_DESIGN_RECIPE.md §N.4](../MOBILE_APP_DESIGN_RECIPE.md)
+> - **Tag / Chip / Subtab Wiring Mandate** → [MOBILE_APP_DESIGN_RECIPE.md §N.9](../MOBILE_APP_DESIGN_RECIPE.md)
+> - **Brand Logo 3-Tier Fallback** → [MOBILE_APP_DESIGN_RECIPE.md §N.10](../MOBILE_APP_DESIGN_RECIPE.md)
 >
 > DESIGN_SOP.md retains §1-4 — the wRider page-level architecture (Transactional / Operations / Glass blueprints + DNA Hierarchy Mandates) that pre-date sample-driven mobile builds. Consult MOBILE_APP_DESIGN_RECIPE.md whenever the topic is mobile-template construction.
 

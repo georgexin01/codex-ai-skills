@@ -262,4 +262,4 @@ Skill protocol complete. The webApp should now:
 - (If native) deploy to Android + iOS stores.
 - Deploy to a static host with env vars safely in the dashboard.
 
-Update [`LAA_PROJECT_SNAPSHOT.md`](../../knowledge/3_domains/claude/LAA_PROJECT_SNAPSHOT.md) with the production URL and seed credentials for the record.
+Update [`LAA_PROJECT_SNAPSHOT.md`](../../../memories/3_domains/claude/LAA_PROJECT_SNAPSHOT.md) with the production URL and seed credentials for the record.

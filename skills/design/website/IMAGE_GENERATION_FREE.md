@@ -27,7 +27,7 @@ triggers:
 
 # Skill — Free Image Generation for PHP Websites
 
-> **Sister doc:** [knowledge/IMAGE_SOURCING_FREE.md](../../../knowledge/IMAGE_SOURCING_FREE.md) — the canonical strategy, decision tree, and prompt-craft guide. This file is the **website-specific procedure** that calls that knowledge.
+> **Sister doc:** [knowledge/IMAGE_SOURCING_FREE.md](../../../memories/1_core/IMAGE_SOURCING_FREE.md) — the canonical strategy, decision tree, and prompt-craft guide. This file is the **website-specific procedure** that calls that knowledge.
 
 ## When this skill fires
 

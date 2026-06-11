@@ -16,7 +16,7 @@ date_updated: "2026-04-24"
 
 # `claude-meta` — Sovereign Meta-Orchestrator (V2.1)
 
-**Plan → Execute → Validate**. Wraps every non-trivial Sovereign action. Aligns with [GROUND_KERNEL.md](../../knowledge/0_apex/GROUND_KERNEL.md) Principle 9 and [KARPATHY_OPERATIONAL_STANDARD.md](../../knowledge/2_governance/KARPATHY_OPERATIONAL_STANDARD.md).
+**Plan → Execute → Validate**. Wraps every non-trivial Sovereign action. Aligns with [GROUND_KERNEL.md](../../memories/0_apex/GROUND_KERNEL.md) Principle 9 and [KARPATHY_OPERATIONAL_STANDARD.md](../../memories/0_apex/GROUND_KERNEL.md).
 
 ---
 
@@ -28,7 +28,7 @@ Mandatory if ANY:
 - Schema / RLS / auth-flow change
 - New module / route / entity
 
-Skip if: single-file Tier-2/3 edit ≤ 20 lines — use [AOE_PROTOCOL](../../knowledge/2_governance/AOE_PROTOCOL.md) surgical intent.
+Skip if: single-file Tier-2/3 edit ≤ 20 lines — use [AOE_PROTOCOL](../../memories/archive/AOE_PROTOCOL.md) surgical intent.
 
 ---
 
@@ -47,7 +47,7 @@ No execution until handshake. Gate by tier:
 | **2** (other knowledge/skills) | Shadow Drafting | "go" after diff preview |
 | **3** (project source) | Surgical Intent | implicit; stated upfront |
 
-Handshake expires after 3 turns of silence ([AOE_PROTOCOL](../../knowledge/2_governance/AOE_PROTOCOL.md)).
+Handshake expires after 3 turns of silence ([AOE_PROTOCOL](../../memories/archive/AOE_PROTOCOL.md)).
 
 ### Phase 3 — EXECUTE (gpt-5.4-mini)
 Per skill-chain step:
@@ -57,7 +57,7 @@ Per skill-chain step:
 4. On FAIL → **STOP**, offer rollback, re-enter Phase 1
 
 ### Phase 4 — VALIDATE (gpt-5.4-mini)
-Invoke **[validate-knowledge/skill.md](./validate-knowledge/skill.md)**. Runs: frontmatter check · path-ref integrity · cross-ref resolution · secret scanner · screenshot hygiene ([SCREENSHOT_HYGIENE.md](../../knowledge/2_governance/SCREENSHOT_HYGIENE.md)). `>20` violations → HALT + escalate as Critical Drift.
+Invoke **[validate-knowledge/skill.md](./validate-knowledge/skill.md)**. Runs: frontmatter check · path-ref integrity · cross-ref resolution · secret scanner · screenshot hygiene ([SCREENSHOT_HYGIENE.md](../../memories/2_governance/SCREENSHOT_HYGIENE.md)). `>20` violations → HALT + escalate as Critical Drift.
 
 ---
 
@@ -85,7 +85,7 @@ Invoke **[validate-knowledge/skill.md](./validate-knowledge/skill.md)**. Runs: f
 
 ## 🔁 SCP MANDATE
 
-Every Phase-1 plan comparing ≥2 paths MUST include the [SCP](../../knowledge/2_governance/SOVEREIGN_COMPARISON_PROTOCOL.md) table:
+Every Phase-1 plan comparing ≥2 paths MUST include the [SCP](../../memories/2_governance/MODULE_AUDIT_PROTOCOL.md) table:
 
 | Option | Token Spend | Token Cost | Speed Time | Speed % | Rating /10 |
 
@@ -105,7 +105,7 @@ Pick highest Rating, justify in one sentence, proceed.
 
 ## 🔗 RELATED
 
-[plan-first](./plan-first/skill.md) · [validate-knowledge](./validate-knowledge/skill.md) · [AOE_PROTOCOL](../../knowledge/2_governance/AOE_PROTOCOL.md) · [KARPATHY](../../knowledge/2_governance/KARPATHY_OPERATIONAL_STANDARD.md) · [SCREENSHOT_HYGIENE](../../knowledge/2_governance/SCREENSHOT_HYGIENE.md)
+[plan-first](./plan-first/skill.md) · [validate-knowledge](./validate-knowledge/skill.md) · [AOE_PROTOCOL](../../memories/archive/AOE_PROTOCOL.md) · [KARPATHY](../../memories/0_apex/GROUND_KERNEL.md) · [SCREENSHOT_HYGIENE](../../memories/2_governance/SCREENSHOT_HYGIENE.md)
 
 ---
 **V2.1 trimmed 2026-04-24** — removed verbose HUD examples and redundant prose; protocol logic intact.

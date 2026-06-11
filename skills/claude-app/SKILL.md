@@ -103,9 +103,9 @@ The webApp's `src/` layer has six load-bearing folders. Every step below anchors
 ## 📖 Reference Vaults
 
 - **Cookbook**: `_cookbook.md` — reusable snippets (pagination, fail-closed guard, Bakery store template, soft-delete filter). Linked from multiple steps.
-- **Master Rules**: [`MASTER_RULES.md`](../../knowledge/3_domains/claude/MASTER_RULES.md) — Rule #1 (Supabase schema isolation) is the law.
-- **Apex Kernel**: [`GROUND_KERNEL.md`](../../knowledge/0_apex/GROUND_KERNEL.md)
-- **Project Snapshot**: [`LAA_PROJECT_SNAPSHOT.md`](../../knowledge/3_domains/claude/LAA_PROJECT_SNAPSHOT.md)
+- **Master Rules**: [`MASTER_RULES.md`](../SHARED_DB_CONTRACT.md) — Rule #1 (Supabase schema isolation) is the law.
+- **Apex Kernel**: [`GROUND_KERNEL.md`](../../memories/0_apex/GROUND_KERNEL.md)
+- **Project Snapshot**: [`LAA_PROJECT_SNAPSHOT.md`](../../memories/3_domains/claude/LAA_PROJECT_SNAPSHOT.md)
 
 ## 🛠️ Mandatory Execution Rules
 

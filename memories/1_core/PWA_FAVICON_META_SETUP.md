@@ -255,12 +255,12 @@ Total time: ~6 minutes for a clean app.
 
 ## 🔗 Companion files
 
-- [`wrider_complete_recipe.md`](./wrider_complete_recipe.md) — full
+- [`wrider_complete_recipe.md`](../archive/wrider_complete_recipe.md) — full
   rebuild manifest; this PWA setup is referenced from §1 (design tokens)
   and §11 (CI rules).
-- [`wrider_design_senses.md`](./wrider_design_senses.md) — aesthetic
+- [`wrider_design_senses.md`](../archive/wrider_design_senses.md) — aesthetic
   senses (theme color, weight, smoothing) that the meta tags inherit.
-- [`wrider_chat_mining.md`](./wrider_chat_mining.md) — protocol for
+- [`wrider_chat_mining.md`](../archive/wrider_chat_mining.md) — protocol for
   evolving these standards from observed user edits.
 - [`../../../Desktop/wRider/BLUEPRINT.md`](../../../Desktop/wRider/BLUEPRINT.md)
   — architectural manifest; §14 KNOWLEDGE TREE references this file.

@@ -51,3 +51,8 @@ vendor_imports/
 !libraries/gemini-migrated/
 !rules/
 !README.md
+
+# Historical/session-log memory: on disk, excluded from AI routing to cut noise.
+memories/archive/
+memories/rollout_summaries/
+memories/raw_memories.md

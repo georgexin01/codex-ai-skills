@@ -18,7 +18,7 @@ Default profile: `Ultra-Lean`. **Primary boot = `00_PULSE.md` only.**
 3. Everything below is **deferred** — load only when PULSE is insufficient (deep/governance/recovery/high-risk turns):
    - `C:\Users\User\.codex\CODEX_DYNAMIC_ROUTING.md` (current index map; regenerate via `Update-CodexRouting.ps1 -Quiet` if stale)
    - `C:\Users\User\.codex\00_CODEX_START_HERE.md` (this file — full canonical boot reference)
-   - `C:\Users\User\.codex\00_REASONING_EVOLUTION_PROTOCOL.md` (full 11-rule reasoning protocol)
+   - `C:\Users\User\.codex\00_REASONING_EVOLUTION_PROTOCOL.md` (full 12-rule reasoning protocol)
 4. Superseded in boot (do not read — PULSE replaces them): `00_CODEX_CUSTOM_INSTRUCTIONS_CODEX_BRIDGE.md`, `CODEX_FULL_ACCESS_ROUTING.md` (both are redirect stubs).
 5. `codex-router\codex-manifest.json` is a path/hash integrity index (no descriptions) — confirm existence / detect drift only; never full-read at boot.
 

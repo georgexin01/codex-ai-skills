@@ -58,8 +58,8 @@ mock_seed:
 ---
 ## 🔗 相关参考 (Related Links)
 *   **全局总纲**: [MASTER_BLUEPRINT.md](MASTER_BLUEPRINT.md)
-*   **自动化门禁**: [SOVEREIGN_VERIFY_SUITE.md](../../2_governance/SOVEREIGN_VERIFY_SUITE.md)
-*   **交互规范**: [SOVEREIGN_INTERACTION_PATTERNS.md](../../1_core/SOVEREIGN_INTERACTION_PATTERNS.md)
+*   **自动化门禁**: [SOVEREIGN_VERIFY_SUITE.md](../../2_governance/MODULE_AUDIT_PROTOCOL.md)
+*   **交互规范**: [SOVEREIGN_INTERACTION_PATTERNS.md](../../1_core/INDUSTRIAL_INTERACTION_LIBRARY.md)
 
 ---
 *Created by Antigravity Tier-0 Governance Node*

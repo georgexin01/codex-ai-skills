@@ -21,7 +21,7 @@ Last step. The site is running end-to-end (Steps 01–12 all pass their Verify b
 
 ## 📋 Procedure
 
-1. **Open** `C:/Users/User/.codex/knowledge/3_domains/claude/LAA_PROJECT_SNAPSHOT.md`. This file already exists; don't recreate it.
+1. **Open** `C:/Users/User/.codex/memories/3_domains/claude/LAA_PROJECT_SNAPSHOT.md`. This file already exists; don't recreate it.
 2. **Update the sections** that changed during the build (Code Vault §1 checklist).
 3. **Move entries** from "Known Bugs" to "Resolved" with a dated line.
 4. **Add any new decisions** that aren't derivable from code (compliance driver, deadline, deferred scope).
@@ -33,7 +33,7 @@ Last step. The site is running end-to-end (Steps 01–12 all pass their Verify b
 
 ### §1. Sections to audit + update
 ```
-3_domains/claude/LAA_PROJECT_SNAPSHOT.md
+memories/3_domains/claude/LAA_PROJECT_SNAPSHOT.md
 ├── Project Layout              → still accurate? add new top-level folders
 ├── MASTER RULES applied        → add new FK relationships to quizLaa
 ├── Supabase Schema (quizLaa)   → add new tables + casing notes
@@ -116,7 +116,7 @@ curl -s -o /dev/null -w '%{http_code}' "https://<staging-url>/agents/not-a-uuid"
 
 ```bash
 # 1. Snapshot file readable + has updated date
-head -20 C:/Users/User/.codex/knowledge/3_domains/claude/LAA_PROJECT_SNAPSHOT.md
+head -20 C:/Users/User/.codex/memories/3_domains/claude/LAA_PROJECT_SNAPSHOT.md
 
 # 2. Run the verification queries in Code Vault §5; compare output with what
 #    you wrote in the snapshot. Diffs are a bug.

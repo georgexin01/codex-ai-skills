@@ -40,7 +40,7 @@ Instead of linear matching, use recursive path verification:
 
 ### Step 1.5 — SOVEREIGN COMPARISON (when ≥2 paths exist)
 
-If the Logic Cascade surfaces **more than one viable recipe**, emit the mandatory SCP table before picking a winner (per [SOVEREIGN_COMPARISON_PROTOCOL.md](../../../knowledge/2_governance/SOVEREIGN_COMPARISON_PROTOCOL.md)):
+If the Logic Cascade surfaces **more than one viable recipe**, emit the mandatory SCP table before picking a winner (per [SOVEREIGN_COMPARISON_PROTOCOL.md](../../../memories/2_governance/MODULE_AUDIT_PROTOCOL.md)):
 
 | Option | Token Spend | Token Cost | Speed Time | Speed % | Rating /10 |
 |---|---|---|---|---|---|
@@ -99,7 +99,7 @@ If any step invoked `browser_subagent`, vision tool, or screenshot capture:
    ```
 3. Verify the folder is gone before moving to the next step.
 
-Full rule: [SCREENSHOT_HYGIENE.md](../../../knowledge/2_governance/SCREENSHOT_HYGIENE.md).
+Full rule: [SCREENSHOT_HYGIENE.md](../../../memories/2_governance/SCREENSHOT_HYGIENE.md).
 
 ### Step 6 — FINAL HUD REPORT
 Generate a clinical summary of files touched and verification status.

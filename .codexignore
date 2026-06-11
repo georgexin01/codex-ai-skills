@@ -54,3 +54,9 @@ skills/faucet/
 !skills/
 !rules/
 !README.md
+
+# Historical/session-log memory: kept on disk for reference, excluded from AI
+# routing + route-miss grep to cut noise. Restore by removing a line below.
+memories/archive/
+memories/rollout_summaries/
+memories/raw_memories.md

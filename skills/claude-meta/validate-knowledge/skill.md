@@ -104,7 +104,7 @@ ghp_[A-Za-z0-9]{30,}            # GitHub PATs
 
 ### Step 7.7 — SCREENSHOT HYGIENE
 
-Per [SCREENSHOT_HYGIENE.md](../../../knowledge/2_governance/SCREENSHOT_HYGIENE.md):
+Per [SCREENSHOT_HYGIENE.md](../../../memories/2_governance/SCREENSHOT_HYGIENE.md):
 
 - [ ] Confirm `C:/Users/User/.codex/brain/{session-uuid}/.tempmediaStorage/` folders are empty or absent.
 - [ ] Confirm `.system_generated/click_feedback/` folders are empty or absent.
