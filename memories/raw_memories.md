@@ -1091,3 +1091,436 @@ Reusable knowledge:
 References:
 - User wording: `this is not how i wanted for setting stop... i will continue next day`
 
+## Thread `019ea535-8424-7d53-8335-e274edd59b46`
+updated_at: 2026-06-08T09:13:45+00:00
+cwd: \\?\C:\Users\user\Desktop\VIPBillion
+rollout_path: C:\Users\user\.codex\sessions\2026\06\08\rollout-2026-06-08T11-10-08-019ea535-8424-7d53-8335-e274edd59b46.jsonl
+rollout_summary_file: 2026-06-08T03-10-08-2t4a-vipbillion_admin_responsive_image_uploads_and_lesson_article.md
+
+---
+description: Updated VIPBillion admin CRUD image fields from URL inputs to upload+crop flows, standardized responsive image sizes, added a mobile image column for vehicles, converted reviews to a single avatar upload, and left a lesson-articles rename unresolved because the new label was not provided.
+task: multi-module-admin-image-upload-rollout
+task_group: c:\Users\user\Desktop\VIPBillion
+task_outcome: partial
+cwd: c:\Users\user\Desktop\VIPBillion
+keywords: vipbillion, admin-vipbillion, website-vipbillion, upload, crop modal, responsive images, thumbnail_url_mobile, image-spec, ant-design-vue, useSingleImageAttachment, useSingleFlightSubmit, tsc config error, review avatar, lesson articles
+---
+
+### Task 1: Responsive image CRUD rollout
+
+task: update image-bearing CRUD forms to upload+crop
+task_group: admin-vipbillion / web-antd
+task_outcome: success
+
+Preference signals:
+- user repeatedly rejected plain URL inputs for image fields -> default to real upload/crop UI for image CRUD
+- user explicitly standardized on `Desktop Image (1200×630)` and `Mobile Image (400×300)` -> use these as the default responsive pair for content modules
+- user asked to update all image tables and confirm in stages -> prefer batch-by-batch rollout with explicit confirmation checkpoints
+
+Reusable knowledge:
+- `slideshows` already had the working pattern: dual upload cards, crop modal, submit-time path resolution, and cleanup of removed attachments.
+- `useSingleImageAttachment` already handles staged upload, crop, file list state, resolved storage paths, and soft-delete cleanup.
+- Website templates already consume responsive images for hero/service layouts, so the admin changes matched real frontend behavior.
+
+Failures and how to do differently:
+- Full TypeScript verification failed because `apps/web-antd/tsconfig.json` already has an invalid `--ignoreDeprecations` value (`TS5103`).
+- First patch attempt failed due to file drift/encoding noise; re-read the live file before full replacement.
+
+References:
+- `admin-vipbillion/apps/web-antd/src/views/slideshows/slideshow-form.vue`
+- `admin-vipbillion/apps/web-antd/src/views/services/service-form.vue`
+- `admin-vipbillion/apps/web-antd/src/views/attractions/attraction-form.vue`
+- `admin-vipbillion/apps/web-antd/src/views/insights/insight-form.vue`
+- verification failure: `apps/web-antd/tsconfig.json(5,27): error TS5103: Invalid value for '--ignoreDeprecations'.`
+
+### Task 2: Vehicles responsive image support
+
+task: add mobile image support to vehicles and convert the form
+task_group: admin-vipbillion / vehicles
+task_outcome: success
+
+Preference signals:
+- user accepted the staged rollout with repeated "confirm" responses -> continue in milestones and verify each batch before proceeding
+
+Reusable knowledge:
+- `vehicles` originally had only `thumbnail_url` plus `images`; adding a mobile image needed a DB migration, type change, and form/UI change.
+- The vehicle form can reuse the same upload/crop helper pattern as the other content forms once the schema includes `thumbnail_url_mobile`.
+
+Failures and how to do differently:
+- Console/read-back encoding noise made `×` appear malformed in some outputs; the source files themselves were structurally correct.
+
+References:
+- `admin-vipbillion/apps/web-antd/src/sql/migrations/059_vipbillion_vehicle_mobile_image.sql`
+- `admin-vipbillion/apps/web-antd/src/types/vehicle.ts`
+- `admin-vipbillion/apps/web-antd/src/views/vehicles/vehicle-form.vue`
+- `admin-vipbillion/apps/web-antd/src/stores/vehicle.ts`
+- `admin-vipbillion/apps/web-antd/src/sql/migrations/054_vipbillion_vehicles.sql`
+
+### Task 3: Reviews single avatar upload
+
+task: convert reviews avatar_url from URL input to upload/crop
+task_group: admin-vipbillion / reviews
+task_outcome: success
+
+Preference signals:
+- the user wanted all image tables updated, but `reviews.avatar_url` is a testimonial/avatar field rather than a responsive website pair -> classify by image usage before choosing a dual-image pattern
+
+Reusable knowledge:
+- `reviews` only has `avatar_url` in both the type and store layer, and the website search did not reveal a separate mobile/desktop variant.
+- The correct admin UX here is a single square avatar upload, not a desktop/mobile pair.
+
+Failures and how to do differently:
+- The rollout initially considered a dual-image pattern for reviews, but that would have been the wrong semantic fit; future edits should check whether the site actually renders a distinct mobile version before adding a second field.
+
+References:
+- `admin-vipbillion/apps/web-antd/src/views/reviews/review-form.vue`
+- `admin-vipbillion/apps/web-antd/src/types/review.ts`
+- `admin-vipbillion/apps/web-antd/src/stores/review.ts`
+- avatar spec used: `400×400`
+
+### Task 4: Lesson Articles rename request
+
+task: rename lesson articles label/description
+task_group: content copy / unknown source
+task_outcome: uncertain
+
+Preference signals:
+- user requested `Lesson Articles > change name` and also supplied a description string -> likely wants the label renamed together with the explanatory copy, but the replacement label was never provided
+
+Reusable knowledge:
+- Exact phrase search for `Lesson Articles` and the supplied description returned no matches in the current workspace, so the source may live elsewhere or be generated.
+
+Failures and how to do differently:
+- Could not complete the rename because the new label was not supplied.
+- Do not guess the replacement name; ask for the exact new label before editing.
+
+References:
+- exact user text: `Lesson Articles > change name`
+- supplied description: `Three training topics pulled from the LAA lesson system and rewritten into simple homepage introductions.`
+- search commands returned no exact match in the current workspace
+
+## Thread `019ea5f3-2c21-7e62-a288-39b8101c0029`
+updated_at: 2026-06-08T06:51:23+00:00
+cwd: \\?\C:\Users\user\Desktop\angel-interior
+rollout_path: C:\Users\user\.codex\sessions\2026\06\08\rollout-2026-06-08T14-37-17-019ea5f3-2c21-7e62-a288-39b8101c0029.jsonl
+rollout_summary_file: 2026-06-08T06-37-17-i1HH-remove_helper_text_and_skip_tiktok_embed_change.md
+
+---
+description: removed duplicate TikTok helper copy from admin resource forms, then verified website templates already convert TikTok video URLs into embed URLs and honored the user's request to skip a deeper embed change
+task: admin copy cleanup + TikTok URL embed check
+task_group: angel-interior (admin panel + website)
+task_outcome: success
+cwd: C:\Users\user\Desktop\angel-interior
+keywords: rg, apply_patch, Vue form schema, description field, TikTok, embed, video_url, toEmbedUrl, regex, website templates, admin-panel-angel, website-angel-interior
+---
+### Task 1: Remove TikTok helper text from admin resource forms
+
+task: remove description text "Only TikTok video URLs accepted. Query parameters (?...) will be removed automatically." from SketchUp and Material resource video URL fields
+task_group: admin-panel-angel UI cleanup
+task_outcome: success
+
+Preference signals:
+- when the user said "remove this text no need anymore" and pointed at the exact helper copy, they wanted a surgical removal of only that visible text rather than a redesign of the field.
+
+Reusable knowledge:
+- The helper text lived in the form schema `description:` property, not in locale strings.
+- The same helper text was duplicated in both `admin-panel-angel/apps/web-antd/src/views/sketchup/sketchup-resource-form.vue` and `admin-panel-angel/apps/web-antd/src/views/material/material-resource-form.vue`.
+
+Failures and how to do differently:
+- No major failure; the only gotcha was that the same copy existed in two sibling forms, so future copy cleanup should search for duplicates after the first match.
+
+References:
+- `rg -n "Only TikTok video URLs accepted|Query parameters|TikTok video URLs" .`
+- Removed `description:` line from:
+  - `admin-panel-angel/apps/web-antd/src/views/sketchup/sketchup-resource-form.vue`
+  - `admin-panel-angel/apps/web-antd/src/views/material/material-resource-form.vue`
+- Post-edit `rg` over `admin-panel-angel/apps/web-antd/src/views` returned no matches for the helper text.
+
+### Task 2: Check TikTok URL embed handling, then skip deeper change
+
+task: verify whether a saved TikTok video URL like `https://www.tiktok.com/@interiordesign.angel/video/7579769359506099463` is already upgraded into an embeddable player on the website
+task_group: website-angel-interior render path verification
+task_outcome: success
+
+Preference signals:
+- when the user asked to "make sure my tiktok video url path ... will upgrade to above setting" they wanted verification of the render path before changing code.
+- when the user later said "ai i want to skip this", they wanted the deeper embed change stopped immediately rather than continued.
+
+Reusable knowledge:
+- Website-side templates already normalize TikTok URLs to embed URLs by extracting the numeric video ID with regex and returning `https://www.tiktok.com/embed/v2/<id>?autoplay=1&mute=1&loop=1&music_info=0&description=0&rel=0&is_from_webapp=v1&sender_device=pc`.
+- The embed helpers were found in `website-angel-interior/template/sketchup-free-resources.php`, `template/material-free-resources.php`, `template/about.php`, `template/home.php`, and `template/download.php`.
+- Admin detail drawers still show the raw URL link, but website templates handle playback embedding.
+
+Failures and how to do differently:
+- The initial plan to keep digging and patch the renderer was unnecessary after the user explicitly said to skip; future similar turns should stop after reporting the verified state.
+
+References:
+- `website-angel-interior/template/sketchup-free-resources.php:614-629`
+- `website-angel-interior/template/material-free-resources.php:720-848`
+- `website-angel-interior/template/about.php:539-574`
+- `website-angel-interior/template/home.php:639-652`
+- `website-angel-interior/template/download.php:285-308`
+- Search command: `rg -n "video_url|videoUrl|tiktok|tikTok|embed" website-angel-interior admin-panel-angel`
+
+## Thread `019ea607-f8d7-7801-8fa8-bf8e4a70b357`
+updated_at: 2026-06-08T07:04:06+00:00
+cwd: \\?\C:\Users\user\Documents\supabase-project-backup-restore
+rollout_path: C:\Users\user\.codex\sessions\2026\06\08\rollout-2026-06-08T15-00-05-019ea607-f8d7-7801-8fa8-bf8e4a70b357.jsonl
+rollout_summary_file: 2026-06-08T07-00-00-wfVd-supabase_vps_backup_failed_on_mixed_case_schema_pgdump.md
+
+---
+description: Investigated a failed VPS Supabase backup flow, traced the failure to `pg_dump` schema filtering for a mixed-case schema name, and patched VPS/local dump scripts to quote schema patterns correctly.
+task: explain backup workspace + diagnose failed VPS backup + fix schema dump path
+task_group: supabase backup/restore workspace
+ task_outcome: partial
+cwd: C:\Users\user\Documents\supabase-project-backup-restore
+keywords: supabase, backup, restore, vps-backup.bat, scripts/02-backup-vps.sh, scripts/vps-side/project-backup.sh, pg_dump, pg_dump no matching schemas were found, mixed-case schema, quizLaa, ssh, scp, Git Bash, local-backups, vps-backups
+---
+### Task 1: Explain workspace and `vps-backup.bat`
+
+task: explain C:\Users\user\Documents\supabase-project-backup-restore and what vps-backup.bat does
+task_group: supabase backup/restore orientation
+task_outcome: success
+
+Preference signals:
+- The user asked for a plain-language explanation of what the root project folder does and what `vps-backup.bat` does -> future explanations should trace actual data flow and end result, not just file names.
+- The user described the desired outcome as backing up the VPS Supabase database/tables/settings and copying the backup to a local folder -> future answers should explicitly map source -> backup artifacts -> local destination.
+
+Reusable knowledge:
+- This workspace is a per-project Supabase backup/restore toolkit, not app source.
+- `vps-backup.bat` is only a Windows launcher; it finds Git Bash, optionally prompts for a schema, and calls `scripts/02-backup-vps.sh`.
+- The VPS backup flow is: `.bat` -> Git Bash wrapper -> upload `scripts/vps-side/project-backup.sh` via `scp` -> run it over `ssh` -> download the generated folder back into local `vps-backups/<schema>-<timestamp>` -> remove the remote scratch folder.
+- The backup contents include schema SQL, data SQL, public metadata, auth rows, storage metadata, grants, storage policies, public functions, edge functions, physical storage files, and a manifest.
+- `scripts/lib/pick-schema.sh` reads schemas from the local Docker Supabase container even though the backup target is the VPS.
+
+Failures and how to do differently:
+- None material for this task; only note that `.env` contained live VPS credentials and should never be repeated in outputs.
+
+References:
+- `README.md` says the tool is a “Per-project backup tool for multi-project Supabase setups” and lists `vps-backup.bat` as the VPS backup entry point.
+- `vps-backup.bat` runs `scripts/02-backup-vps.sh %SCHEMA%`.
+- `scripts/02-backup-vps.sh` uploads `scripts/vps-side/project-backup.sh`, executes it, downloads the result, then cleans up `/tmp/project-backup-<schema>-<timestamp>`.
+- `scripts/vps-side/project-backup.sh` generates the backup contents on the VPS.
+
+### Task 2: Diagnose failed `quizLaa` backup and patch pg_dump quoting
+
+task: trace the failed VPS backup for schema quizLaa and make it work for mixed-case schema names
+task_group: supabase backup/restore debugging and script fix
+task_outcome: partial
+
+Preference signals:
+- The user asked “where i failed and how i failed and how to solve this” -> future debugging should identify the exact failing command and explain the cause in operational terms.
+- The user pasted the terminal transcript with the schema picker and the error output -> future diagnosis should anchor on the exact runtime log, not only static code reading.
+
+Reusable knowledge:
+- The run succeeded through VPS connectivity, project resolution, and schema resolution, then failed on the first `pg_dump` step.
+- Error observed: `pg_dump: error: no matching schemas were found` after `[1/10] Schema DDL...`.
+- Root cause: the schema name `quizLaa` is mixed-case, and `pg_dump -n` needs an embedded quoted identifier for mixed-case schemas.
+- Patched `scripts/vps-side/project-backup.sh` and `scripts/lib/dump-schema.sh` to use `PG_DUMP_SCHEMA_PATTERN="\"$SCHEMA\""` / `PG_DUMP_SCHEMA_PATTERN="\"$PG_SCHEMA\""` for `pg_dump` schema filters.
+- The same fix was applied to the local dump helper to keep local and VPS behavior aligned.
+
+Failures and how to do differently:
+- Live rerun/verification was not captured in the rollout, so the fix is not fully proven yet.
+- If the backup fails again, the next step is to check whether the issue moves past the first dump step; if it does, the new error will be the next real blocker.
+
+References:
+- `scripts/vps-side/project-backup.sh`: resolves `PG_SCHEMA`, sets `PG_DUMP_SCHEMA_PATTERN`, and uses it in `pgdump_exec --schema-only` and `--data-only`.
+- `scripts/lib/dump-schema.sh`: same quoting fix for local schema dumps.
+- Failing output snippet: `pg_dump: error: no matching schemas were found`.
+- Shell trace showed the backup path reached `/tmp/project-backup-quizLaa-20260608-145920` and intended local destination `vps-backups/quizLaa-20260608-145920`.
+
+## Thread `019ea9f7-efa2-7410-9caa-b02bab86976c`
+updated_at: 2026-06-09T01:30:19+00:00
+cwd: \\?\C:\Users\user\Desktop\angel-interior
+rollout_path: C:\Users\user\.codex\sessions\2026\06\09\rollout-2026-06-09T09-20-58-019ea9f7-efa2-7410-9caa-b02bab86976c.jsonl
+rollout_summary_file: 2026-06-09T01-20-58-KDBG-angel_interior_project_understanding_root_docs_admin_website.md
+
+---
+description: User asked to understand the shared Angel Interior project; read root docs first, then mapped admin-panel-angel and website-angel-interior architecture, active routes, auth flow, SEO flow, and download flow.
+task: understand shared angel-interior workspace and summarize architecture
+task_group: angel-interior project orientation
+task_outcome: success
+cwd: C:\Users\user\Desktop\angel-interior
+keywords: angel-interior, admin-panel-angel, website-angel-interior, STATUS.md, DATABASE.md, CROSSWALK.md, GitNexus, Supabase, Vben Admin, PHP router, seo_settings, downloadData.php, auth.ts, material.ts
+---
+### Task 1: Read root docs and project layout
+
+task: understand project from STATUS.md, DATABASE.md, CROSSWALK.md, CLAUDE.md, index.php, initData.php, SupabaseClient.php
+
+task_group: angel-interior architecture
+
+task_outcome: success
+
+Preference signals:
+- when the user asked to understand Angel Interior, they had previously requested “read my angel-interior project root folder .md” first -> start from root handoff docs and project notes before code digging
+- when the user asked to “admin-panel-angel website-angel-interior ai read and understand my project,” treat both apps as one connected system, not separate tasks
+
+Reusable knowledge:
+- `STATUS.md`, `DATABASE.md`, and `CROSSWALK.md` are the best first reads for this checkout family.
+- `admin-panel-angel` is the schema owner / editing surface; `website-angel-interior` is the PHP runtime consumer.
+- The website router exposes public pages plus JSON APIs; `initData.php` applies route-aware SEO and excludes `/blogs/{slug}` from SEO table lookup.
+- `SupabaseClient.php` uses `Accept-Profile` and `Content-Profile` headers for the configured schema.
+- `downloadData.php` centralizes free vs paid resource CTA routing and Stripe checkout session creation.
+
+Failures and how to do differently:
+- The initial `Get-Content` path for the GitNexus exploring skill was wrong; the correct local path was under `.agents`, not `.codex`.
+- A queried project note path did not exist at the assumed location; verify actual file placement before depending on it.
+
+References:
+- `STATUS.md` lines 45-56 and 79-85: app split, local URLs, and current implementation state.
+- `DATABASE.md` lines 191-371: schema contracts for `blog_posts`, `slideshows`, `sketchup_resources`, `material_resources`, `seo_settings`, and `contact_submissions`.
+- `CROSSWALK.md` lines 10-17: entity-to-route mapping for admin modules.
+- `website-angel-interior/index.php:19-54`
+- `website-angel-interior/lib/initData.php:39-65`
+- `website-angel-interior/api/core/SupabaseClient.php:29-44`
+- `website-angel-interior/api/Models/SeoModel.php:17-40`
+- `website-angel-interior/lib/downloadData.php:61-104,199-281`
+
+### Task 2: Map admin stores and route modules
+
+task: map admin-panel-angel auth, material store, and active route modules
+
+task_group: admin-panel-angel architecture
+
+task_outcome: success
+
+Preference signals:
+- The user wanted the project understood as a whole, so the admin module inventory and store boundaries are worth preserving for future runs.
+
+Reusable knowledge:
+- `authLogin()` in `apps/web-antd/src/stores/auth.ts` calls the unified `loginApi()`, stores access token, then fetches user info/access codes.
+- `apps/web-antd/src/api/core/auth.ts` switches between mock and Supabase via `VITE_NITRO_MOCK`.
+- `apps/web-antd/src/stores/material.ts` directly implements list/create/update/remove/reorder for material categories and resources against Supabase.
+- Active route modules include `users`, `blog`, `slideshow`, `sketchup`, `seo`, `material`, `contact`, `attachments`, and `workflow-test`.
+
+Failures and how to do differently:
+- GitNexus returned a symbol context for `authLogin` but not a rich process trace; if future understanding needs caller/flow detail, query a more specific symbol or a named process.
+
+References:
+- `admin-panel-angel/apps/web-antd/src/stores/auth.ts:46-83`
+- `admin-panel-angel/apps/web-antd/src/api/core/auth.ts:24-120`
+- `admin-panel-angel/apps/web-antd/src/stores/material.ts:36-306`
+- `admin-panel-angel/apps/web-antd/src/router/routes/modules/*.ts`
+
+### Task 3: Map website SEO/download/runtime flows
+
+task: map website-angel-interior routing, SEO lookup, Supabase REST client, and resource download flow
+
+task_group: website-angel-interior architecture
+
+task_outcome: success
+
+Preference signals:
+- The user’s “understand my project” request implies they want the runtime data flow, not only the static route list.
+
+Reusable knowledge:
+- `index.php` routes public pages and APIs, including `/material/{category}`, `/checkout/{type}/{id}`, `/download-file/{type}/{id}`, `/download`, `/api/v1/seo`, `/api/v1/contact-submissions`, and tracking endpoints.
+- `lib/initData.php` sets global site contact/social fallbacks and applies DB SEO overrides using `resolveSeoRow()`; `/blogs/` detail pages are intentionally excluded from SEO table lookup.
+- `api/Models/SeoModel.php` reads `seo_settings` only for `source_surface='website'` and published rows, indexed by `route_path`.
+- `lib/downloadData.php` centralizes resource CTA resolution: free resources point to `/download-file/...`, paid ones point to `/checkout/...`, with Stripe checkout creation in the same file.
+
+Failures and how to do differently:
+- None material for this task; the main missing piece is still live verification rather than understanding.
+
+References:
+- `website-angel-interior/index.php:19-54`
+- `website-angel-interior/lib/initData.php:20-65`
+- `website-angel-interior/api/Models/SeoModel.php:17-40`
+- `website-angel-interior/lib/downloadData.php:21-104,199-281`
+
+## Thread `019eaf1c-91eb-7443-997c-2114d1555e81`
+updated_at: 2026-06-10T09:48:42+00:00
+cwd: \\?\C:\Users\user\Desktop\VIPBillion
+rollout_path: C:\Users\user\.codex\sessions\2026\06\10\rollout-2026-06-10T09-19-05-019eaf1c-91eb-7443-997c-2114d1555e81.jsonl
+rollout_summary_file: 2026-06-10T01-19-05-G8bT-vipbillion_bilingual_settings_and_shared_website_wiring.md
+
+---
+description: VIPBillion project orientation followed by bilingual settings migration and first shared website wiring for EN/CN marquee + WhatsApp reply text, with local Supabase verification and partial website contact/social cleanup
+task: VIPBillion root-doc review, bilingual settings upgrade, and shared website data wiring
+task_group: VIPBillion root/admin website + Supabase workflow
+task_outcome: partial
+cwd: C:\Users\user\Desktop\VIPBillion
+keywords: VIPBillion, Supabase, settings, marquee_text_en, marquee_text_cn, whatsapp_message_en, whatsapp_message_cn, initData.php, header.php, footer.php, contacts.php, php -l, docker cp, psql -f, local Supabase, bilingual website
+---
+
+### Task 1: Project orientation and source-of-truth mapping
+
+task: read root and project-specific markdown docs, then verify runtime files for VIPBillion
+
+task_group: project orientation / docs-to-code reconciliation
+task_outcome: success
+
+Preference signals:
+- The user asked to “understand my project reading all .md in my project root and other folder files” -> future runs should start with root docs plus project-specific docs before making edits.
+- The user later confirmed before changes -> future runs should verify current code/state instead of assuming older docs are still current.
+
+Reusable knowledge:
+- `DATABASE.md` and runtime files are the main truth sources; some planning docs are stale or mixed with older Angel/WMS content.
+- `website-vipbillion/index.php` is the front controller; `website-vipbillion/router.php` handles clean URL routing.
+- `admin-vipbillion/apps/web-antd` is the live admin app; `pnpm dev:local` is the local dev entrypoint in that workspace.
+
+Failures and how to do differently:
+- `WORKSPACE.md` referenced missing docs; do not assume every referenced root file exists.
+- Several docs are mixed-freshness; prefer code, schema, and test/runtime output over prose when they conflict.
+
+References:
+- `website-vipbillion/index.php`
+- `website-vipbillion/router.php`
+- `website-vipbillion/lib/initData.php`
+- `admin-vipbillion/apps/web-antd/package.json`
+- `DATABASE.md`
+
+### Task 2: Add bilingual settings columns and backfill them
+
+task: add marquee/WhatsApp bilingual settings fields, backfill existing values, and update admin + website loaders
+
+task_group: Supabase schema + admin settings + website config
+task_outcome: success
+
+Preference signals:
+- The user asked to “make sure to check the 2 newly adde language update data that need to write to website” -> future runs should verify new language-specific data end to end, not just in the database.
+- The user confirmed before proceeding, suggesting checkpoint-style confirmation is useful before larger website rewires.
+
+Reusable knowledge:
+- Migration `111_vipbillion_settings_bilingual_marquee_whatsapp.sql` adds `marquee_text_en/cn` and `whatsapp_message_en/cn`, then backfills from legacy columns.
+- Admin settings form and edit drawer must be updated at the same time as the DB migration so the new fields can actually be edited.
+- Website settings loading now resolves language-specific values via `$_SESSION['language']`, with fallback to the legacy single-value columns.
+
+Failures and how to do differently:
+- The initial schema had only single-language fields; future similar work should inspect the actual table before wiring website text.
+- A schema-only change would have left the website unable to pick EN vs CN; update loader + UI in the same pass.
+
+References:
+- `admin-vipbillion/apps/web-antd/src/sql/migrations/111_vipbillion_settings_bilingual_marquee_whatsapp.sql`
+- `admin-vipbillion/apps/web-antd/src/views/settings/setting-form.vue`
+- `admin-vipbillion/apps/web-antd/src/views/settings/drawer/setting-edit-drawer.vue`
+- `website-vipbillion/api/Models/SettingsModel.php`
+- `website-vipbillion/lib/initData.php`
+- Local DB verification against `supabase_db_local-supabase`
+
+### Task 3: Wire shared website contact/header/footer data to settings
+
+task: replace hardcoded shared contact/social/WhatsApp/marquee values on the website with settings-driven values
+
+task_group: website PHP shared components
+task_outcome: partial
+
+Preference signals:
+- The user’s repeated confirmation and focus on “newly adde language update data” suggests the visible website output should be driven from the settings data rather than hardcoded strings.
+
+Reusable knowledge:
+- `website-vipbillion/lib/initData.php` now has `getLocalizedSettingValue()` for EN/CN selection and `formatPhoneDisplay()` for readable phone output.
+- Empty social links should be hidden, not rendered as empty icons.
+- The floating WhatsApp button should use the stored WhatsApp URL plus the stored reply message.
+
+Failures and how to do differently:
+- Only the shared/header/footer/contact surfaces were updated in this pass; many page-specific templates still contain hardcoded contact/WhatsApp/social text and need a follow-up sweep.
+- Working-hours labels were initially duplicated with the stored text; if the DB string already contains the label, the template should only render the stored text once.
+
+References:
+- `website-vipbillion/lib/header.php`
+- `website-vipbillion/lib/footer.php`
+- `website-vipbillion/template/contacts.php`
+- `website-vipbillion/lib/initData.php`
+- Validation: `php -l website-vipbillion/lib/initData.php`, `php -l website-vipbillion/lib/header.php`, `php -l website-vipbillion/lib/footer.php`, `php -l website-vipbillion/template/contacts.php`
+

@@ -37,6 +37,80 @@
       "proxyHost": "127.0.0.1",
       "proxyPort": 0,
       "updatedAt": "2026-06-03T08:39:35.151Z"
+    },
+    {
+      "schemaVersion": 2,
+      "appServerProtocolVersion": 2,
+      "appVersion": "26.602.40724",
+      "channel": "prod",
+      "cliVersion": "26.602.40724",
+      "entryId": "codex-runtime-daa67a7b8b2e95c7f6e19ec309a09f86",
+      "extensionBuildChannels": [
+        "prod"
+      ],
+      "extensionIds": [
+        "hehggadaopoacecdllhhajmbjkdcmajg"
+      ],
+      "installId": "codex-install-a2b1e4b3fe3444871e1255cc9080e75f",
+      "nativeHostNames": [
+        "com.openai.codexextension"
+      ],
+      "nativeHostProtocolVersion": 2,
+      "nativeHostVersion": "26.602.40724",
+      "paths": {
+        "browserClientPath": "C:\\Users\\user\\.codex\\plugins\\cache\\openai-bundled\\chrome\\latest\\scripts\\browser-client.mjs",
+        "codexCliPath": "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\bin\\fb2111b91430cb17\\codex.exe",
+        "codexHome": "C:\\Users\\user\\.codex",
+        "extensionHostPath": "C:\\Users\\user\\.codex\\plugins\\cache\\openai-bundled\\chrome\\latest\\extension-host\\windows\\x64\\extension-host.exe",
+        "nodePath": "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\bin\\5b9024f90663758b\\node.exe",
+        "nodeReplPath": "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\bin\\34ab3e1324cc55b5\\node_repl.exe",
+        "resourcesPath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.602.4764.0_x64__2p2nqsd0c76g0\\app\\resources"
+      },
+      "presence": {
+        "lastSeenAt": "2026-06-09T02:58:12.153Z",
+        "pid": 18324,
+        "startedAt": "2026-06-09T02:58:12.153Z"
+      },
+      "proxyHost": "127.0.0.1",
+      "proxyPort": 0,
+      "updatedAt": "2026-06-09T02:58:12.153Z"
+    },
+    {
+      "schemaVersion": 2,
+      "appServerProtocolVersion": 2,
+      "appVersion": "26.602.71036",
+      "channel": "prod",
+      "cliVersion": "26.602.71036",
+      "entryId": "codex-runtime-fbf6f2cbebf2dc660d1a53c69e6e3cab",
+      "extensionBuildChannels": [
+        "prod"
+      ],
+      "extensionIds": [
+        "hehggadaopoacecdllhhajmbjkdcmajg"
+      ],
+      "installId": "codex-install-56f8db027522216c97e1bc90cbe2e073",
+      "nativeHostNames": [
+        "com.openai.codexextension"
+      ],
+      "nativeHostProtocolVersion": 2,
+      "nativeHostVersion": "26.602.71036",
+      "paths": {
+        "browserClientPath": "C:\\Users\\user\\.codex\\plugins\\cache\\openai-bundled\\chrome\\latest\\scripts\\browser-client.mjs",
+        "codexCliPath": "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\bin\\fb2111b91430cb17\\codex.exe",
+        "codexHome": "C:\\Users\\user\\.codex",
+        "extensionHostPath": "C:\\Users\\user\\.codex\\plugins\\cache\\openai-bundled\\chrome\\latest\\extension-host\\windows\\x64\\extension-host.exe",
+        "nodePath": "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\bin\\5b9024f90663758b\\node.exe",
+        "nodeReplPath": "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\bin\\34ab3e1324cc55b5\\node_repl.exe",
+        "resourcesPath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.602.9276.0_x64__2p2nqsd0c76g0\\app\\resources"
+      },
+      "presence": {
+        "lastSeenAt": "2026-06-10T02:47:48.298Z",
+        "pid": 28308,
+        "startedAt": "2026-06-10T02:47:48.298Z"
+      },
+      "proxyHost": "127.0.0.1",
+      "proxyPort": 0,
+      "updatedAt": "2026-06-10T02:47:48.298Z"
     }
   ]
 }
